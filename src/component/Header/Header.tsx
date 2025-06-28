@@ -3,7 +3,10 @@ import Image from 'next/image'
 import React from 'react'
 import logo from "../../../public/images/logo.png"
 import styles from "./header.module.css"
-import LangSwitch from '../LangSwitch'
+import LangSwitch from '../LangSwitch/LangSwitch'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPhone } from '@fortawesome/free-solid-svg-icons'
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons/faWhatsapp'
 
 const Header = async ({
   lo
@@ -18,8 +21,20 @@ const Header = async ({
         </Link>
         <div className={styles.links}>
           <LangSwitch lo={lo}></LangSwitch>
-          <a href="/">Whatsapp</a>
-          <a href="/">Call</a>
+          <div>
+            <a href="">
+              <FontAwesomeIcon icon={faWhatsapp} />
+              <span>
+                Whatsapp
+              </span>
+            </a>
+            <a href="tel:+966505638988">
+              <FontAwesomeIcon icon={faPhone} />
+              <span>
+                +966505638988
+              </span>
+            </a>
+          </div>
         </div>
       </div>
     </header>

@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
 import { usePathname, useRouter } from 'next/navigation'
-// import styles from "./lang-switch.module.css"
+import styles from "./lang-switch.module.css"
 
 const LangSwitch = ({
   lo
@@ -19,7 +19,7 @@ const LangSwitch = ({
     }
   return (
     // <button onClick={changeLanguage} className={lo === "ar" ? styles.ar + " " + styles.langSwitch : styles.langSwitch}>
-    <button onClick={changeLanguage}>
+    <button onClick={changeLanguage} className={styles.langSwitch}>
       <span className={lo === "ar" ? "hidden" : ""}>Ar</span>
       <span className={lo === "en" ? "hidden" : ""}>En</span>
     </button>

@@ -1,4 +1,4 @@
-import LangSwitch from "@/component/LangSwitch";
+import LangSwitch from "@/component/LangSwitch/LangSwitch";
 // import { useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import "./globals.css";

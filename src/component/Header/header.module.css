@@ -20,3 +20,57 @@
     width: 100px;
     object-fit: contain;
 }
+.header .links{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.header .links > div{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.header .links > div a{
+    background-color: var(--main-color);
+    color: #fff;
+    /* background-color: #fff;
+    color: var(--main-color);*/
+    border: 1px solid var(--main-color); 
+    padding: 4px 16px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 0px;
+    direction: ltr !important;
+    box-shadow: var(--main-shadow);
+    transition: var(--main-transition);
+    height: 30px;
+}
+.header .links > div a:hover{
+    gap: 5px;
+}
+.header .links > div a span{
+    width: 0;
+    overflow: hidden;
+    transition: var(--main-transition);
+}
+.header .links > div a:hover:first-child span{
+    width: 60px;
+}
+.header .links > div a:hover:last-child span{
+    width: 100px;
+}
+.header .links > div a svg{
+    width: 16px;
+    height: 16px;
+}
+.header .links > div a:nth-child(2){
+    background-color: #fff;
+    color: var(--main-color);
+    border: 1px solid var(--main-color);
+}
+
+.header .links > div a:nth-child(2):hover{
+    background-color: var(--main-color);
+    color: #fff;
+}
