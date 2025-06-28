@@ -1,0 +1,22 @@
+.header{
+    position: fixed;
+    left: 0;
+    height: 0;
+    width: 100vw;
+    /* height: 100px; */
+}
+.header > div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header.ar{
+    direction: rtl;
+}
+.header .logo{
+    width: 100px;
+}
+.header .logo img{
+    width: 100px;
+    object-fit: contain;
+}
