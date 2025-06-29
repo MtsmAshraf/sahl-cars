@@ -2,6 +2,15 @@
   "HomePage": {
     "Header": {
       "whatsapp": "Whatsapp"
+    },
+    "Hero": {
+      "slogan": "Financing your car's just got easier",
+      "p1": "Installments at cash price – Easy and convenient terms and solutions",
+      "p2": "Toyota and non-Toyota – New and used",
+      "btns": {
+        "b1": "Book now",
+        "b2": "Contact Us"
+      }
     }
   }
 }

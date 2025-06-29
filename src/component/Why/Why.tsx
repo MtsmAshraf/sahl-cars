@@ -3,10 +3,12 @@ import styles from "./why.module.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCar, faClock, faSackDollar, faShieldAlt } from '@fortawesome/free-solid-svg-icons'
 import MainHeading from '../MainHeading/MainHeading'
+import { useTranslations } from 'next-intl'
 const Why = () => {
   return (
     <section className={styles.why}>
         <MainHeading>
+            {/* Why Sahl Cars? */}
             لماذا سهل كارز؟
         </MainHeading>
         <div className="container">

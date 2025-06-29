@@ -3,6 +3,7 @@
     width: fit-content;
     margin-right: auto;
     margin-left: auto;
+    font-weight: bold;
 }
 .mainHeading span{
     position: absolute;

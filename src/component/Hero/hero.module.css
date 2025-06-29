@@ -49,6 +49,7 @@
 }
 .hero > div:first-of-type h2{
     font-size: 100px;
+    font-weight: bold;
     width: 900px;
     max-width: 100%;
     color: var(--main-color);
@@ -94,6 +95,7 @@
 .hero > div:first-of-type .btns a{
     padding: 4px 20px;
     border-radius: 8px;
+    font-size: 18px;
     box-shadow: var(--main-shadow);
     transition: var(--main-transition);
     border: 1px solid var(--main-color);

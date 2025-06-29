@@ -17,6 +17,18 @@
 }
 .why .card{
     text-align: center;
+    width: calc((100% - 60px) / 4);
+    height: 200px;
+}
+@media (max-width: 992px) {
+    .why .card{
+        width: calc((100% - 40px) / 3);
+    }
+}
+@media (max-width: 767px) {
+    .why .card{
+        width: calc((100% - 20px) / 2);
+    }
 }
 .why .card span{
     display: block;

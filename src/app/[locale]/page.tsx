@@ -1,5 +1,6 @@
 // import { useTranslations } from "next-intl";
 // import { getTranslations } from "next-intl/server";
+import Contact from "@/component/Contact/Contact";
 import "./globals.css";
 import Hero from "@/component/Hero/Hero";
 import Why from "@/component/Why/Why";
@@ -12,6 +13,7 @@ export default async function Home() {
     <main>
       <Hero />
       <Why />
+      <Contact />
     </main>
   );
 }

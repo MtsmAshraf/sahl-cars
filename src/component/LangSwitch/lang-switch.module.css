@@ -13,6 +13,7 @@
     border-radius: 50%;
     overflow: hidden;
     background-color: var(--bg-color);
+    background-color: #fff;
     border: 1px solid var(--main-color);
 }
 .langSwitch, .langSwitch:focus, .langSwitch:focus-visible, .langSwitch:active{
