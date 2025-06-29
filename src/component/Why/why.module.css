@@ -1,0 +1,45 @@
+.why{
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.why > h2{
+    text-align: center;
+    font-size: 40px;
+    color: var(--main-color);
+}
+.why > div:nth-child(2){
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 50px;
+}
+.why .card{
+    text-align: center;
+}
+.why .card span{
+    display: block;
+    color: #fff;
+    background-color: var(--main-color);
+    padding: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    margin-right: auto;
+    margin-left: auto;
+    aspect-ratio: 1;
+}
+
+.why .card span svg{
+    width: 80%;
+}
+.why .card .cardText{
+    margin-top: 10px;
+}
+.why .card .cardText h4{
+    font-size: 26px;
+    font-weight: bold;
+}

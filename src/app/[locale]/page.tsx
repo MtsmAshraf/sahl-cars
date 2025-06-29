@@ -3,6 +3,7 @@ import LangSwitch from "@/component/LangSwitch/LangSwitch";
 import { getTranslations } from "next-intl/server";
 import "./globals.css";
 import Hero from "@/component/Hero/Hero";
+import Why from "@/component/Why/Why";
 
 export default async function Home({
   params
@@ -15,6 +16,7 @@ export default async function Home({
   return (
     <main>
       <Hero />
+      <Why />
     </main>
   );
 }
