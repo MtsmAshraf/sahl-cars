@@ -7,7 +7,6 @@ import LangSwitch from '../LangSwitch/LangSwitch'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhone } from '@fortawesome/free-solid-svg-icons'
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons/faWhatsapp'
-import { useTranslations } from 'next-intl'
 import { getTranslations } from 'next-intl/server'
 
 const Header = async ({
