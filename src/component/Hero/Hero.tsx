@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from "./hero.module.css"
-import Image from 'next/image'
-import heroImg from "../../../public/images/hero.png"
+// import Image from 'next/image'
+// import heroImg from "../../../public/images/hero.png"
 const Hero = () => {
   return (
     <section className={styles.hero}>
