@@ -7,12 +7,15 @@ import LangSwitch from '../LangSwitch/LangSwitch'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhone } from '@fortawesome/free-solid-svg-icons'
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons/faWhatsapp'
+import { useTranslations } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 
 const Header = async ({
   lo
 } : {
   lo: string
 }) => {
+  const t = await getTranslations("HomePage.Header")
   return (
     <header className={lo === "ar" ? styles.header + " " + styles.ar : styles.header}>
       <div className="container">
@@ -25,7 +28,7 @@ const Header = async ({
             <a href="">
               <FontAwesomeIcon icon={faWhatsapp} />
               <span>
-                Whatsapp
+                {t("whatsapp")}
               </span>
             </a>
             <a href="tel:+966505638988">

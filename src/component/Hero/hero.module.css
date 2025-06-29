@@ -1,0 +1,110 @@
+.hero{
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    min-height: 100dvh;
+}
+.hero::before{
+    content: "";
+    z-index: -1;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 200%;
+    width: 400px;
+    background-color: var(--main-color);
+    opacity: 0.3;
+    transform: rotateZ(30deg);
+}
+.hero::after{
+    content: "";
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 200%;
+    width: 400px;
+    background-color: var(--main-color);
+    opacity: 0.3;
+    transform: rotateZ(-30deg);
+}
+.hero > .img{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    /* transform: translateY(-50%); */
+    z-index: -1;
+    width: 500px;
+    max-width: 100%;
+    /* background-color: red; */
+}
+.hero > div:first-of-type{
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    text-align: center;
+}
+.hero > div:first-of-type h2{
+    font-size: 100px;
+    width: 900px;
+    max-width: 100%;
+    color: var(--main-color);
+}
+.hero > div:first-of-type p{
+    font-size: 24px;
+}
+
+@media (max-width: 992px) {
+    .hero > div:first-of-type h2{
+        font-size: 80px;
+    }
+    .hero::before{
+        transform: translateY(200px) rotateZ(30deg);
+    } 
+    .hero::after{
+        transform: translateY(200px) rotateZ(-30deg);
+    }
+}
+@media (max-width: 767px) {
+    .hero > div:first-of-type h2{
+        font-size: 60px;
+    }
+    .hero > div:first-of-type p{
+        font-size: 20px;
+    }
+    .hero::before{
+        transform: translateY(400px) rotateZ(30deg);
+    } 
+    .hero::after{
+        transform: translateY(400px) rotateZ(-30deg);
+    }
+}
+.hero > div:first-of-type .btns{
+    display: flex;
+    align-items: center;
+    direction: rtl;
+    gap: 10px;
+    margin-top: 20px;
+}
+.hero > div:first-of-type .btns a{
+    padding: 4px 20px;
+    border-radius: 8px;
+    box-shadow: var(--main-shadow);
+    transition: var(--main-transition);
+    border: 1px solid var(--main-color);
+}
+.hero > div:first-of-type .btns a:first-child{
+    background-color: var(--main-color);
+    color: #fff;
+}
+.hero > div:first-of-type .btns a:last-child{
+    color: var(--main-color);
+    background-color: #fff;
+}
+.hero > div:first-of-type .btns a:last-child:hover{
+    background-color: var(--main-color);
+    color: #fff;
+}

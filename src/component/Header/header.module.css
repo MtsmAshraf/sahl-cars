@@ -3,6 +3,7 @@
     left: 0;
     height: 0;
     width: 100vw;
+    z-index: 3;
     /* height: 100px; */
 }
 .header > div{
@@ -56,6 +57,9 @@
 }
 .header .links > div a:hover:first-child span{
     width: 60px;
+}
+.header.ar .links > div a:hover:first-child span{
+    width: 40px;
 }
 .header .links > div a:hover:last-child span{
     width: 100px;
