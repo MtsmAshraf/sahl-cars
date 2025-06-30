@@ -4,8 +4,6 @@ import styles from "./hero.module.css"
 import { useTranslations } from 'next-intl'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
-import Image from 'next/image'
-import heroImg from "../../../public/images/hero.png"
 
 
 const Hero = ({
