@@ -5,36 +5,29 @@ import { faCar, faClock, faSackDollar, faShieldAlt } from '@fortawesome/free-sol
 import MainHeading from '../MainHeading/MainHeading'
 import { useTranslations } from 'next-intl'
 const Why = () => {
+    const t = useTranslations("HomePage.Why")
   return (
     <section className={styles.why}>
         <MainHeading>
-            {/* Why Sahl Cars? */}
-            لماذا سهل كارز؟
+            {
+                t("heading")
+            }
         </MainHeading>
         <div className="container">
             <div className={styles.card}>
                 <span className={styles.icon}>
-                    <FontAwesomeIcon icon={faCar} />
+                    <FontAwesomeIcon icon={faClock} />
                 </span>
                 <div className={styles.cardText}>
                     <h4>
-                        جميع الماركات
+                        {
+                            t("0.heading")
+                        }
                     </h4>
                     <p>
-                        تويوتا وغير تويوتا - جديد ومستعمل
-                    </p>
-                </div>
-            </div>
-            <div className={styles.card}>
-                <span className={styles.icon}>
-                    <FontAwesomeIcon icon={faShieldAlt} />
-                </span>
-                <div className={styles.cardText}>
-                    <h4>
-                        ضمان وثقة
-                    </h4>
-                    <p>
-                        خدمة موثوقة ومضمونة
+                        {
+                            t("0.p")
+                        }                    
                     </p>
                 </div>
             </div>
@@ -44,23 +37,48 @@ const Why = () => {
                 </span>
                 <div className={styles.cardText}>
                     <h4>
-                        أقساط ميسرة
+                        {
+                            t("1.heading")
+                        }
                     </h4>
                     <p>
-                        تقسيط بسعر الكاش مع شروط مرنة
+                        {
+                            t("1.p")
+                        }                    
                     </p>
                 </div>
             </div>
             <div className={styles.card}>
                 <span className={styles.icon}>
-                    <FontAwesomeIcon icon={faClock} />
+                    <FontAwesomeIcon icon={faShieldAlt} />
                 </span>
                 <div className={styles.cardText}>
                     <h4>
-                        سرعة في الموافقة
+                        {
+                            t("2.heading")
+                        }
                     </h4>
                     <p>
-                        موافقات سريعة خلال 24 ساعة
+                        {
+                            t("2.p")
+                        }                    
+                    </p>
+                </div>
+            </div>
+            <div className={styles.card}>
+                <span className={styles.icon}>
+                    <FontAwesomeIcon icon={faCar} />
+                </span>
+                <div className={styles.cardText}>
+                    <h4>
+                        {
+                            t("3.heading")
+                        }
+                    </h4>
+                    <p>
+                        {
+                            t("3.p")
+                        }                    
                     </p>
                 </div>
             </div>

@@ -6,10 +6,29 @@
     "Hero": {
       "slogan": "Financing your car's just got easier",
       "p1": "Installments at cash price – Easy and convenient terms and solutions",
-      "p2": "Toyota and non-Toyota – New and used",
+      "p2": "Toyota and other brands – New and used",
       "btns": {
         "b1": "Book now",
         "b2": "Contact Us"
+      }
+    },
+    "Why": {
+      "heading": "Why Sahl Cars?",
+      "0": {
+        "heading": "Fast Approval",
+        "p": "Quick approvals within 24 hours"
+      },
+      "1": {
+        "heading": "Easy Installments",
+        "p": "Installments at cash price with flexible terms"
+      },
+      "2": {
+        "heading": "Trust & Guarantee",
+        "p": "Reliable and guaranteed service"
+      },
+      "3": {
+        "heading": "All Brands",
+        "p": "Toyota and other brands – New and used"
       }
     }
   }

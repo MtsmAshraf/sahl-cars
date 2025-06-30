@@ -5,9 +5,11 @@
   --bg-color: #f8f5ff;
   --foreground: #171717;
   --main-color: #38207f;
+  --lighter-color: #5b49b7;
   --text-color: #000;
   --main-shadow: 0px 0px 14px -3px #ccc;
   --main-transition: all 0.3s 0s cubic-bezier(.47,.65,.33,.87);
+  --main-gradient: linear-gradient(90deg, var(--lighter-color) 0%, var(--main-color) 100%);
 }
 @font-face {
   font-family: 'Beiruti';
