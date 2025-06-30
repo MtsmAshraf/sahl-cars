@@ -32,7 +32,7 @@ const Hero = ({
      }, [])
   return (
     <section className={lo === "ar" ? styles.hero + " " + styles.ar : styles.hero} id='hero'>
-        <div>
+        <div className='container'>
             <div className={styles.text}>
                 <h2 className='stagger-text'>
                     {
@@ -61,9 +61,6 @@ const Hero = ({
                         }
                     </a>
                 </div>
-            </div>
-            <div className={styles.img}>
-                <Image src={heroImg} alt='Hero car'></Image>
             </div>
         </div>
     </section>

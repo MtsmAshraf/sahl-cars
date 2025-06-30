@@ -36,3 +36,9 @@
     text-shadow: 2px 2px 0px #000;
     color: var(--main-color);
 }
+
+@media (max-width: 992px) {
+    .mainHeading h2{
+        font-size: 40px;
+    }
+}
