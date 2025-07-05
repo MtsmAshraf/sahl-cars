@@ -1,0 +1,17 @@
+.whatsappForm{
+    width: 600px;
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50px;
+    background-image: var(--main-gradient);
+    color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+}
+.whatsappForm input{
+    background-color: #fff;
+}
+.whatsappForm button{
+    background-color: rgb(0, 175, 0);
+}
