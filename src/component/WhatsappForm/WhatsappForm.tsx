@@ -22,7 +22,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     
     // Format the message
-    const whatsappMessage = `New Contact Form Submission:%0A%0A` +
+    const whatsappMessage = `New Contact Message from Sahl Cars Website:%0A%0A` +
     `Name: ${formData.name}%0A` +
     `Email: ${formData.email}%0A` +
     `Phone: ${formData.phone}%0A` +
