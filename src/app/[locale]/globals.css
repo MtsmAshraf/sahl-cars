@@ -49,6 +49,7 @@
 body{
   font-family:"Beiruti", sans-serif;
   background-color: var(--bg-color);
+  overflow-x: hidden;
 }
 html{
   scroll-behavior: smooth;

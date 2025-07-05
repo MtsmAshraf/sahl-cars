@@ -71,12 +71,13 @@ return (
                 placeholder='+966xxxxxxxxx'
                 value={formData.phone}
                 onChange={handleChange}
+                required
                 />
             </div>
         </div>
         
         <div>
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">الإيميل</label>
             <input
             type="email"
             id="email"
@@ -92,7 +93,7 @@ return (
                 <label htmlFor="car-brand">
                     نوع السيارة
                 </label>
-                    <select name="car-brand" id="car-brand">
+                    <select required name="car-brand" id="car-brand">
                         <option value="">اختر نوع السيارة</option>
                         <option value="new-toyota">تويوتا جديدة</option>
                         <option value="used-toyota">تويوتا مستعملة</option> <option value="">تويوتا جديدة</option>
@@ -104,7 +105,7 @@ return (
                 <label htmlFor="budget">
                     الميزانية التقريبية
                 </label>
-                    <select name="budget" id="budget">
+                    <select required name="budget" id="budget">
                         <option value="">اختر الميزانية التقريبية</option>
                         <option value="fifty-to-one-hundred">
                             50,000 - 100,000 ريال
@@ -122,8 +123,26 @@ return (
             </div>
         </div>
 
+        <div className={styles.yesNo}>
+            <label htmlFor="">هل لديك؟</label>
+            <div>
+                <div>
+                    <input type="radio" required id="yes" name="boolean-input" value="yes"/>
+                    <label htmlFor="yes">نعم</label> 
+                </div>
+                <div>
+                    <input type="radio" required id="no" name="boolean-input" value="no" />
+                    <label htmlFor="no">لا</label> 
+                </div>
+                <div>
+                    <input type="radio" required id="maybe" name="boolean-input" value="maybe" />
+                    <label htmlFor="maybe">ربما</label> 
+                </div>
+            </div>
+        </div>
+
         <div>
-            <label htmlFor="message">Message</label>
+            <label htmlFor="message">رسالة إضافية (اختياري)</label>
             <textarea
             id="message"
             name="message"

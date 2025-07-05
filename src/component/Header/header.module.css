@@ -1,10 +1,12 @@
 .header{
-    position: fixed;
+    position: absolute;
     left: 0;
-    height: 0;
-    width: 100vw;
+    top: 0;
+    width: 100dvw;
     z-index: 50;
-    /* height: 100px; */
+    isolation: isolate;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
 }
 .header > div{
     display: flex;
@@ -49,6 +51,7 @@
 }
 .header .links > div a:hover{
     gap: 5px;
+    background-image: var(--main-gradient);
 }
 .header .links > div a span{
     width: 0;
