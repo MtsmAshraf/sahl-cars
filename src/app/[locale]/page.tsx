@@ -17,7 +17,7 @@ export default async function Home({
     <main>
       <Hero lo={locale} />
       <Why />
-      <Contact />
+      <Contact lo={locale}/>
     </main>
   );
 }
