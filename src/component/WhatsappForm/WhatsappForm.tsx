@@ -47,10 +47,14 @@ return (
     <form className={lo === "ar" ? styles.whatsappForm + " " + styles.ar : styles.whatsappForm} onSubmit={handleSubmit} >
         <div className={styles.formHeading}>
             <h4>
-                تواصل معنا الآن
+                {
+                    t("formHeading.h4")
+                }
             </h4>
             <p>
-                املأ النموذج وسنتواصل معك خلال 24 ساعة
+                {
+                    t("formHeading.p")
+                }
             </p>
         </div>
         <div className={styles.parentDiv}>

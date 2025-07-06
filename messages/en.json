@@ -34,6 +34,10 @@
     "Contact": {
       "heading": "Contact Us",
       "form": {
+        "formHeading": {
+          "h4": "Contact Us Now!",
+          "p": "Fill out the form and we will contact you within 24 hours."
+        },
         "name": {
           "label": "Name",
           "placeholder": "Type Your full name"
