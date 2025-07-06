@@ -32,7 +32,26 @@
       }
     },
     "Contact": {
-      "heading": "تواصل معنا"
+      "heading": "تواصل معنا",
+      
+      "form": {
+        "name": {
+          "label": "الاسم بالكامل",
+          "placeholder": "أدخل اسمك بالكامل"
+        },
+        "phone": {
+          "label": "رقم الهاتف",
+          "placeholder": "+966xxxxxxxxx"
+        },
+        "email": {
+          "label": "الإيميل",
+          "placeholder": "username@example.com"
+        },
+        "message": {
+          "label": "رسالة إضافية (اختياري)",
+          "placeholder": ""
+        }
+      }
     }
   }
 }

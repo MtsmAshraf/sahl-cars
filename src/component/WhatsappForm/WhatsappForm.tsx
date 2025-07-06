@@ -2,11 +2,15 @@
 // components/WhatsAppForm.js
 import { useState } from 'react';
 import styles from "./whatsapp-form.module.css"
+import { useTranslations } from 'next-intl';
 export default function WhatsAppForm({
   lo
 } : {
   lo: string
 }) {
+
+    const t = useTranslations("HomePage.Contact.form")
+
 const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -51,24 +55,32 @@ return (
         </div>
         <div className={styles.parentDiv}>
             <div>
-                <label htmlFor="name" >الاسم بالكامل</label>
+                <label htmlFor="name" >
+                    {
+                        t("name.label")
+                    }
+                </label>
                 <input
                 type="text"
                 id="name"
                 name="name"
-                placeholder='ادخل اسمك بالكامل'
+                placeholder={`${t("name.placeholder")}`}
                 value={formData.name}
                 onChange={handleChange}
                 required
                 />
             </div>
             <div>
-                <label htmlFor="phone">رقم الهاتف</label>
+                <label htmlFor="phone">
+                    {
+                        t("phone.label")
+                    }
+                </label>
                 <input
                 type="tel"
                 id="phone"
                 name="phone"
-                placeholder='+966xxxxxxxxx'
+                placeholder={`${t("phone.placeholder")}`}
                 value={formData.phone}
                 onChange={handleChange}
                 required
@@ -77,12 +89,16 @@ return (
         </div>
         
         <div>
-            <label htmlFor="email">الإيميل</label>
+            <label htmlFor="email">
+                    {
+                        t("email.label")
+                    }
+            </label>
             <input
             type="email"
             id="email"
             name="email"
-            placeholder='username@example.com'
+            placeholder={`${t("email.placeholder")}`}
             value={formData.email}
             onChange={handleChange}
             required
@@ -143,11 +159,16 @@ return (
         </div>
 
         <div>
-            <label htmlFor="message">رسالة إضافية (اختياري)</label>
+            <label htmlFor="message">
+                {
+                    t("message.label")
+                }
+            </label>
             <textarea
             id="message"
             name="message"
             value={formData.message}
+            placeholder={`${t("message.placeholder")}`}
             onChange={handleChange}
             // rows="4"
             ></textarea>

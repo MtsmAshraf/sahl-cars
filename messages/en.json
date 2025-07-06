@@ -32,7 +32,25 @@
       }
     },
     "Contact": {
-      "heading": "Contact Us"
+      "heading": "Contact Us",
+      "form": {
+        "name": {
+          "label": "Name",
+          "placeholder": "Type Your full name"
+        },
+        "phone": {
+          "label": "Phone Number",
+          "placeholder": "+966xxxxxxxxx"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "username@example.com"
+        },
+        "message": {
+          "label": "Additional Message (Optional)",
+          "placeholder": ""
+        }
+      }
     }
   }
 }

@@ -28,15 +28,15 @@
     position: absolute;
     left: 50%;
     top: 0;
-    padding: 10px;
+    padding: 12px;
     transform: translateX(-50%);
     height: 100px;
     width: 100px;
     border-radius: 50%;
     overflow: hidden;
     background-color: #fff;
-    border-bottom: 1px solid var(--main-color);
-    box-shadow: var(--sec-shadow);
+    border-bottom: 2px solid var(--main-color);
+    /* box-shadow: var(--sec-shadow); */
 }
 @media (max-width: 600px) {
     .header .logo{
