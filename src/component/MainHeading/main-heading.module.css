@@ -36,7 +36,13 @@
     text-shadow: 2px 2px 0px #000;
     color: var(--main-color);
 }
-
+.mainHeading.inverted h2{
+    color: var(--bg-color);
+}
+.mainHeading.inverted span,
+.mainHeading.inverted::before{
+    background-color: var(--bg-color);
+}
 @media (max-width: 992px) {
     .mainHeading h2{
         font-size: 40px;

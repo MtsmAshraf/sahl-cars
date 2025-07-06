@@ -3,6 +3,10 @@
     isolation: isolate;
     overflow: hidden;
     min-height: 100dvh;
+    background-image: url("../../../public/images/hero-bg.svg");
+    background-size: cover;
+    background-position: 100%;
+    background-repeat: no-repeat;
     /* isolation: isolate; */
 }
 .hero.ar{

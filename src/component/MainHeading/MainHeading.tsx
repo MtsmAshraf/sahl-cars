@@ -1,12 +1,14 @@
 import React from 'react'
 import styles from "./main-heading.module.css"
 const MainHeading = ({
-    children
+    children,
+    inverted
 } : {
-    children: React.ReactNode
+    children: React.ReactNode,
+    inverted? : boolean
 }) => {
   return (
-    <div className={styles.mainHeading}>
+    <div className={inverted ? styles.mainHeading + " " + styles.inverted : styles.mainHeading}>
         <span></span>
         <span></span>
         <h2>

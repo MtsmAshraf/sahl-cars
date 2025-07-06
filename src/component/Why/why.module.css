@@ -1,6 +1,8 @@
 .why{
     padding-top: 60px;
     padding-bottom: 60px;
+    background-color: #fff;
+    background-image: var(--main-gradient);
 }
 /* .why > h2{
     text-align: center;
@@ -19,11 +21,13 @@
     text-align: center;
     width: calc((100% - 60px) / 4);
     height: 200px;
+    color: #fff;
 }
 .why .card span{
     display: block;
-    color: #fff;
-    background-image: var(--main-gradient);
+    color: var(--main-color);
+    /* background-image: var(--main-gradient); */
+    background-color: var(--bg-color);
     padding: 20px;
     border-radius: 50%;
     display: flex;
@@ -38,7 +42,7 @@
 .why .card span svg{
     width: 80%;
     font-size: 60px;
-    filter: drop-shadow(4px 4px 0px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(3px 3px 0px rgba(0, 0, 0, 0.4));
 }
 .why .card .cardText{
     margin-top: 10px;

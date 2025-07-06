@@ -82,6 +82,7 @@ return (
             type="email"
             id="email"
             name="email"
+            placeholder='username@example.com'
             value={formData.email}
             onChange={handleChange}
             required

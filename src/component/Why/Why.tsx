@@ -8,7 +8,7 @@ const Why = () => {
     const t = useTranslations("HomePage.Why")
   return (
     <section className={styles.why}>
-        <MainHeading>
+        <MainHeading inverted>
             {
                 t("heading")
             }
