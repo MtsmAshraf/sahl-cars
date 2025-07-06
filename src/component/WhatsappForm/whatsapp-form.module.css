@@ -99,6 +99,7 @@
     height: 40px;
     border: 1px solid var(--text-color);
     background-color: #ededed;
+    cursor: pointer;
 
 }
 .whatsappForm .yesNo > div > div:has(input:checked) label{

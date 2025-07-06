@@ -4,28 +4,54 @@
     top: 0;
     width: 100dvw;
     z-index: 50;
+    padding-top: 14px;
+    padding-bottom: 14px;
     isolation: isolate;
-    background-color: transparent;
-    backdrop-filter: blur(10px);
+    /* background-color: transparent; */
+    backdrop-filter: blur(15px);
+    background-color: #fff;
+    border-radius: 0px 0px 30px 30px;
+    border-bottom: 1px solid var(--main-color);
 }
 .header > div{
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+.header > div > *{
+    width: calc(100% / 3);
+}
 .header.ar{
     direction: rtl;
 }
 .header .logo{
-    width: 80px;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    padding: 10px;
+    transform: translateX(-50%);
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #fff;
+    border-bottom: 1px solid var(--main-color);
+    box-shadow: var(--sec-shadow);
+}
+@media (max-width: 600px) {
+    .header .logo{
+        height: 70px;
+        width: 70px;
+        top: 20px
+    }
 }
 .header .logo img{
-    width: 100%;
     object-fit: contain;
 }
 .header .links{
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     gap: 5px;
 }
 .header .links > div{
@@ -49,23 +75,26 @@
     transition: var(--main-transition);
     height: 30px;
 }
-.header .links > div a:hover{
-    gap: 5px;
-    background-image: var(--main-gradient);
-}
 .header .links > div a span{
     width: 0;
     overflow: hidden;
     transition: var(--main-transition);
 }
-.header .links > div a:hover:first-child span{
-    width: 60px;
-}
-.header.ar .links > div a:hover:first-child span{
-    width: 40px;
-}
-.header .links > div a:hover:last-child span{
-    width: 100px;
+@media (min-width: 600px) {
+    .header .links > div a:hover{
+        gap: 5px;
+        background-image: var(--main-gradient);
+    }
+        
+    .header .links > div a:hover:first-child span{
+        width: 60px;
+    }
+    .header.ar .links > div a:hover:first-child span{
+        width: 40px;
+    }
+    .header .links > div a:hover:last-child span{
+        width: 100px;
+    }
 }
 .header .links > div a svg{
     width: 16px;

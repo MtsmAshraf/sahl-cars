@@ -4,6 +4,7 @@ import styles from "./hero.module.css"
 import { useTranslations } from 'next-intl'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
+import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 
 
 const Hero = ({
@@ -60,6 +61,18 @@ const Hero = ({
                     </a>
                 </div>
             </div>
+            <div className={styles.img}>
+                <DotLottieReact 
+                // src="https://lottie.host/cbab1bf0-9443-4f8d-8fa7-46489702ba56/xVHiC3sM2T.json" 
+                // src="https://lottie.host/5fe284c4-cfee-4d60-8d30-e6b4a11c89d9/v1W3TAjATe.lottie"
+                src="https://lottie.host/a3947af8-c0f4-441f-acca-ea58103508c8/gDpkHmD0bg.lottie"
+
+                loop 
+                autoplay></DotLottieReact>
+
+            </div>
+        </div>
+        <div className={styles.overlay}>
         </div>
     </section>
   )

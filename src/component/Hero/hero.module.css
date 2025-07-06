@@ -3,8 +3,24 @@
     isolation: isolate;
     overflow: hidden;
     min-height: 100dvh;
+    /* isolation: isolate; */
 }
-.hero::before{
+.hero.ar{
+    direction: rtl;
+}
+.hero .overlay{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #9f9f9f;
+    opacity: 0.9;
+    z-index: -1;
+    backdrop-filter: blur(10px);
+    display: none;
+}
+/* .hero::before{
     content: "";
     z-index: -1;
     position: absolute;
@@ -27,45 +43,92 @@
     background-color: var(--main-color);
     opacity: 0.3;
     transform: rotateZ(-30deg);
-}
-.hero > .img{
-    position: absolute;
-    right: 0;
-    top: 50%;
-    /* transform: translateY(-50%); */
-    z-index: -1;
-    width: 500px;
-    max-width: 100%;
-    /* background-color: red; */
-}
+} */
 .hero > div:first-of-type{
     min-height: 100dvh;
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    justify-content: space-between;
+    /* flex-direction: column; */
     height: 100%;
-    text-align: center;
+    /* text-align: center; */
 }
 .hero > div:first-of-type h2{
-    font-size: 100px;
+    font-size: 70px;
     font-weight: bold;
     width: 900px;
     max-width: 100%;
     color: var(--main-color);
     text-shadow: 2px 2px 0px var(--text-color);
     text-wrap: wrap;
-    text-align: center;
+    /* text-align: center; */
 }
 .hero > div:first-of-type p{
     font-size: 24px;
     color: var(--text-color);
 }
 
+.hero > div:first-of-type .btns{
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    /* direction: rtl; */
+    gap: 10px;
+    margin-top: 20px;
+    /* background-color: red; */
+}
+.hero > div:first-of-type .btns a{
+    padding: 4px 20px;
+    border-radius: 8px;
+    font-size: 18px;
+    box-shadow: var(--main-shadow);
+    transition: var(--main-transition);
+    border: 1px solid var(--main-color);
+}
+.hero > div:first-of-type .btns a:first-child{
+    background-image: var(--main-gradient);
+    color: #fff;
+}
+.hero > div:first-of-type .btns a:last-child{
+    color: var(--main-color);
+    background-image: linear-gradient(90deg, white 0%, white 100%);
+}
+.hero > div:first-of-type .btns a:last-child:hover{
+    background-image: var(--main-gradient);
+    color: #fff;
+}
+.hero > div:first-of-type .text{
+    width: 50%;
+}
+.hero > div:first-of-type .img{
+    width: 50%;
+}
+.hero > div:first-of-type .img *{
+    object-fit: contain;
+    height: 100%;
+    height: 70dvh;
+}
 @media (max-width: 992px) {
+
+    .hero > div:first-of-type{
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 100px;
+        text-align: center;
+        gap: 40px;
+    }
+    .hero > div:first-of-type .text{
+        width: 100%;
+    }
+    .hero > div:first-of-type .img{
+        width: 100%;
+    }
     .hero > div:first-of-type h2{
         font-size: 76px;
         width: 100%;
+    }
+    .hero > div:first-of-type .btns{
+        justify-content: center;
     }
     .hero::before{
         transform: translateY(200px) rotateZ(30deg);
@@ -87,33 +150,4 @@
     .hero::after{
         transform: translateY(400px) rotateZ(-30deg);
     }
-}
-.hero > div:first-of-type .btns{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    direction: rtl;
-    gap: 10px;
-    margin-top: 20px;
-    /* background-color: red; */
-}
-.hero > div:first-of-type .btns a{
-    padding: 4px 20px;
-    border-radius: 8px;
-    font-size: 18px;
-    box-shadow: var(--main-shadow);
-    transition: var(--main-transition);
-    border: 1px solid var(--main-color);
-}
-.hero > div:first-of-type .btns a:first-child{
-    background-color: var(--main-color);
-    color: #fff;
-}
-.hero > div:first-of-type .btns a:last-child{
-    color: var(--main-color);
-    background-color: #fff;
-}
-.hero > div:first-of-type .btns a:last-child:hover{
-    background-color: var(--main-color);
-    color: #fff;
 }

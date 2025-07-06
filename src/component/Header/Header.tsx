@@ -24,16 +24,24 @@ const Header = ({
   
     useGSAP(() => {
 
-      gsap.to(headerRef.current, {
-        backgroundColor: "#ffffff90",
-        position: "fixed",
-        borderBottom: "1px solid var(--main-color)",
-        duration: 0.2,
-        scrollTrigger: {
-          trigger: headerRef.current, 
-          start: "bottom top", 
-        },
-      })
+      // gsap.to(headerRef.current, {
+      //   // backgroundColor: "#ffffff90",
+      //   position: "fixed",
+      //   borderBottom: "1px solid var(--main-color)",
+      //   duration: 0.2,
+      //   scrollTrigger: {
+      //     trigger: headerRef.current, 
+      //     start: "bottom top", 
+      //   },
+      // })
+      // gsap.to("#logo", {
+      //   backgroundColor: "#ffffff90",
+      //   duration: 0.2,
+      //   scrollTrigger: {
+      //     trigger: headerRef.current, 
+      //     start: "bottom top", 
+      //   },
+      // })
   
     }, {scope: headerRef}) 
   
@@ -41,11 +49,15 @@ const Header = ({
   return (
     <header ref={headerRef} className={lo === "ar" ? styles.header + " " + styles.ar : styles.header}>
       <div className="container">
-        <Link href={"/"} className={styles.logo}>
-          <Image src={logo} alt='Sahl Cars Logo'></Image>
-        </Link>
-        <div className={styles.links}>
+        <div>
           <LangSwitch lo={lo}></LangSwitch>
+        </div>
+        <div>
+          <Link id="logo" href={"/"} className={styles.logo}>
+            <Image src={logo} alt='Sahl Cars Logo'></Image>
+          </Link>
+        </div>
+        <div className={styles.links}>
           <div>
             <a href="">
               <FontAwesomeIcon icon={faWhatsapp} />
