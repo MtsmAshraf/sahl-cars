@@ -1,11 +1,26 @@
 .steps{
+    position: relative;
+    isolation: isolate;
     padding-top: 60px;
     padding-bottom: 60px;
     background-color: #fff;
     background-image: var(--main-gradient);
+    background-image: url("../../../public/images/hero-bg-3.svg");
 }
 .steps.ar{
     /* direction: rtl; */
+}
+.steps .overlay{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--text-color);
+    opacity: 0.85;
+    z-index: -1;
+    backdrop-filter: blur(10px);
+    /* display: none; */
 }
 /* .steps > h2{
     text-align: center;
@@ -26,7 +41,7 @@
     height: 280px;
     /* color: #fff; */
     /* background-color: var(--bg-color); */
-    background-color: #ffffff58;
+    background-color: #ffffff29;
     backdrop-filter: blur(20px);
     /* background-image: var(--main-gradient); */
     display: flex;

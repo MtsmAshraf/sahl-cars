@@ -109,6 +109,7 @@ const Steps = ({
                 </div>
             </div>
         </div>
+        <div className={styles.overlay}></div>
     </section>
   )
 }
