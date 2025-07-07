@@ -11,6 +11,11 @@
   --sec-shadow: 0px 7px 20px -13px var(--main-color);
   --main-transition: all 0.3s 0s cubic-bezier(.47,.65,.33,.87);
   --main-gradient: linear-gradient(90deg, var(--lighter-color) 0%, var(--main-color) 100%);
+
+  --features-card-bg: rgba(8, 7, 7, 0.2);
+  --main-card-animation-color: #415ede;
+  --card-bg-semi-trans: #eaeaeac2;
+  --important-text-color: var(--main-color);
 }
 @font-face {
   font-family: 'Beiruti';

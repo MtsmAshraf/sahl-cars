@@ -3,7 +3,8 @@
 import Contact from "@/component/Contact/Contact";
 import "./globals.css";
 import Hero from "@/component/Hero/Hero";
-import Why from "@/component/Why/Why";
+import Features from "@/component/Features/Features";
+import Steps from "@/component/Steps/Steps";
 
 export default async function Home({
   params
@@ -16,7 +17,8 @@ export default async function Home({
   return (
     <main>
       <Hero lo={locale} />
-      <Why />
+      <Features lo={locale} />
+      <Steps lo={locale} />
       <Contact lo={locale}/>
     </main>
   );

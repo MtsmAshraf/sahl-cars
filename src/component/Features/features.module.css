@@ -1,0 +1,197 @@
+.features{
+    background-image: var(--overlay-gradient);
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.features.ar{
+    /* font-family: "Zain", sans-serif; */
+    direction: rtl;
+}
+.cards{
+    display: grid;
+    grid-template-columns: repeat(2,minmax(200px,1fr));
+    perspective: 500px;
+    gap: 20px;
+    margin-top: 60px;
+}
+
+@media (max-width: 797px) {
+    .cards{
+        grid-template-columns: repeat(1,minmax(200px,500px));
+        place-content: center;
+    }
+    
+}
+@media (max-width: 500px) {
+    .cards{
+        grid-template-columns: 350px;
+        place-content: center;
+    }
+    
+}
+.cards .card{
+    background-color: var(--features-card-bg);
+    /* background-color: transparent; */
+    /* min-height: 500px; */
+    border-radius: 8px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective-origin: center center;
+    box-shadow: var(--card-hover-shadow);
+    transition: var(--main-transition);
+}   
+.cards .card:hover{
+    transform: rotateX(var(--mouse-y-deg)) rotateY(var(--mouse-x-deg));
+}
+.cards .card .cardBorder,
+.cards .card:before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: var(--main-transition);
+    border-radius: inherit;
+    opacity: 0;
+}
+.cards .card:before{
+    background-image: radial-gradient(
+        600px circle at var(--mouse-x) var(--mouse-y),
+        var(--main-card-animation-color),
+        transparent 40%
+    );
+    z-index: 2;
+}
+.cards .card .cardBorder{
+    background-image: radial-gradient(
+        /* 800px circle at 100px 100px, */
+        400px circle at var(--mouse-x) var(--mouse-y),
+        var(--main-card-animation-color) 20%,
+        transparent 80%
+    );
+    z-index: 1;
+}
+.cards .card:hover::before,
+.cards .card:hover .cardBorder{
+    opacity: 1;
+}
+@media (max-width: 767px) {
+    .cards .card .cardBorder,
+    .cards .card:before{
+        opacity: 1;
+    }
+    .cards .card:before{
+        background-image: radial-gradient(
+            600px circle at 100px 300px,
+            var(--main-card-animation-color),
+            transparent 40%
+        );
+        z-index: 2;
+    }
+    .cards .card .cardBorder{
+        background-image: radial-gradient(
+            /* 800px circle at 100px 100px, */
+            400px circle at 100px 300px,
+            var(--main-card-animation-color) 20%,
+            transparent 80%
+        );
+        z-index: 1;
+    }
+}
+.cards .card .cardContent{
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    border-radius: 8px;
+    background-color: var(--card-bg-semi-trans);
+    /* background-color: transparent; */
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: space-evenly; */
+    position: relative;
+    text-align: center;
+    padding: 20px;
+    z-index: 2;
+}
+.cards .card .cardContent h4{
+    font-weight: bold;
+    color: var(--main-color);
+    color: var(--important-text-color);
+    font-size: 22px;
+}
+.cards .card .cardContent span{
+    /* height: 150px; */
+    /* background-color: red; */
+    height: 150px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 100px;
+    color: var(--important-text-color);
+    transition: var(--animation-transition);
+    position: relative;
+    overflow: hidden;
+}
+.cards .card .cardContent span svg{
+    object-fit: contain;
+}
+.cards .card .cardContent span img{
+    object-fit: contain;
+    height: 100%;
+}
+.cards .card:nth-child(2) .cardContent span svg{
+    /* height: 150px; */
+    /* background-color: red; */
+    transition: var(--animation-transition);
+    animation: 
+        rotating
+        2s 
+        cubic-bezier(0.785, 0.135, 0.15, 0.86) 
+        0s 
+        infinite 
+        alternate;
+}
+.cards .card:nth-child(2) .cardContent span svg:nth-of-type(2){
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    font-size: 24px;
+    animation: 
+        rotating
+        2s 
+        linear
+        0s 
+        infinite 
+        forwards;
+}
+.cards .card .cardContent span iframe{
+    border-width: 0;
+    height: 170px;
+}
+@keyframes rotating {
+    0%{
+        transform: rotateZ(0deg);
+    }
+    100%{
+        transform: rotateZ(360deg);
+    }
+}
+.cards .card .cardContent p{
+    width: 80%;
+    margin-top: 10px;
+    line-height: 1.6;
+}
+@media (max-width: 992px) {
+    .cards .card .cardContent h4{
+        height: 70px;
+        place-content: center;
+    }
+    .cards .card .cardContent p{
+        width: 100%;
+    }
+}

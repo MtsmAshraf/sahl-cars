@@ -27,8 +27,27 @@
         "p": "Reliable and guaranteed service"
       },
       "3": {
-        "heading": "All Brands",
-        "p": "Toyota and other brands – New and used"
+        "heading": "Zero Percent Commission",
+        "p": "Zero commission throughout the financing process."
+      }
+    },
+    "Steps": {
+      "heading": "خطوات طلب التمويل",
+      "0": {
+        "heading": "Submit your financing application",
+        "p": "موافقات سريعة خلال 24 ساعة"
+      },
+      "1": {
+        "heading": "Receive available offers",
+        "p": "تقسيط بسعر الكاش مع شروط مرنة"
+      },
+      "2": {
+        "heading": "Choose the most suitable offer",
+        "p": "خدمة موثوقة ومضمونة"
+      },
+      "3": {
+        "heading": "Get final approval",
+        "p": "صفر عمولة خلال عملية التمويل"
       }
     },
     "Contact": {
