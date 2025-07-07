@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from "./steps.module.css"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCar, faClock, faSackDollar, faShieldAlt } from '@fortawesome/free-solid-svg-icons'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faCar, faClock, faSackDollar, faShieldAlt } from '@fortawesome/free-solid-svg-icons'
 import MainHeading from '../MainHeading/MainHeading'
 import { useTranslations } from 'next-intl'
 

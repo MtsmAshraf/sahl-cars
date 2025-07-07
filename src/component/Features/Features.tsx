@@ -2,10 +2,10 @@
 import { useEffect } from "react"
 import styles from "./features.module.css"
 import MainHeading from "../MainHeading/MainHeading"
-import { faClock, faGear } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+// import { faClock, faGear } from "@fortawesome/free-solid-svg-icons"
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useTranslations } from "next-intl"
-import { DotLottieReact } from "@lottiefiles/dotlottie-react"
+// import { DotLottieReact } from "@lottiefiles/dotlottie-react"
 
 import clockSvg from "../../../public/images/clock-time-timer-watch-svgrepo-com.svg"
 import shieldSvg from "../../../public/images/shield-svgrepo-com.svg"
