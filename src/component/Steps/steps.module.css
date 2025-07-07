@@ -5,7 +5,7 @@
     background-image: var(--main-gradient);
 }
 .steps.ar{
-    direction: rtl;
+    /* direction: rtl; */
 }
 /* .steps > h2{
     text-align: center;

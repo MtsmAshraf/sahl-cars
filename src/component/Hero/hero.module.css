@@ -128,6 +128,7 @@
     }
     .hero > div:first-of-type .img{
         width: 100%;
+        display: none;
     }
     .hero > div:first-of-type h2{
         font-size: 76px;
