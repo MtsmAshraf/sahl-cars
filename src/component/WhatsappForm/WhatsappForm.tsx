@@ -204,7 +204,7 @@ return (
                     <input type="text" placeholder='أدخل ماركة وموديل السيارة' />
                     :
                     selectedBrand === "" ?
-                    <input value={""} type="text" placeholder='اختر ماركة السيارة أولا' disabled style={{ backgroundColor: "#ccc" }}/> 
+                    <input value={""} name='other-brand' type="text" placeholder='اختر ماركة السيارة أولا' disabled style={{ backgroundColor: "#ccc" }}/> 
                     :
                     null
                 }
