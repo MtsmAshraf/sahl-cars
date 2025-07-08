@@ -14,6 +14,8 @@ export default function WhatsAppForm({
 const [formData, setFormData] = useState({
     name: '',
     email: '',
+    dateOfBirth: '',
+    gender: '',
     phone: '',
     message: ''
 });
@@ -108,7 +110,40 @@ return (
             required
             />
         </div>
-        
+
+        <div className={styles.parentDiv}>
+            <div>
+                <label htmlFor="date">
+                        {/* {
+                            t("date.label")
+                        } */}
+                        تاريخ الميلاد
+                </label>
+                <input
+                    type="date"
+                    id="date"
+                    name="date"
+                    value={formData.dateOfBirth}
+                    onChange={handleChange}
+                    required
+                />
+            </div>
+                
+            <div className={styles.yesNo}>
+                <label htmlFor="">النوع</label>
+                <div>
+                    <div>
+                        <input type="radio" required id="male" name="gender" value="male" />
+                        <label htmlFor="male">ذكر</label> 
+                    </div>
+                    <div>
+                        <input type="radio" required id="female" name="gender" value="female" />
+                        <label htmlFor="female">أنثى</label> 
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div className={styles.parentDiv}>
             <div>
                 <label htmlFor="car-brand">
@@ -161,6 +196,135 @@ return (
                 </div>
             </div>
         </div>
+
+        <div className={styles.yesNo}>
+            <label htmlFor="">جهة العمل (جهة صاحب العمل)</label>
+            <div>
+                <div>
+                    <input type="radio" required id="gov-work" name="work" value="gov-work"/>
+                    <label htmlFor="gov-work">حكومي</label> 
+                </div>
+                <div>
+                    <input type="radio" required id="private-work" name="work" value="private-work" />
+                    <label htmlFor="private-work">خاص</label> 
+                </div>
+                <div>
+                    <input type="radio" required id="other-work" name="work" value="other-work" />
+                    <label htmlFor="other-work">آخر</label> 
+                </div>
+            </div>
+        </div>
+        <div className={styles.yesNo}>
+            <label htmlFor="">هل أنت مسجل بالتأمينات الاجتماعية؟</label>
+            <div>
+                <div>
+                    <input type="radio" required id="yes-insurence" name="insurence" value="yes-insurence"/>
+                    <label htmlFor="yes-insurence">نعم</label> 
+                </div>
+                <div>
+                    <input type="radio" required id="no--insurence" name="insurence" value="no--insurence" />
+                    <label htmlFor="no--insurence">لا</label> 
+                </div>
+            </div>
+        </div>
+        
+        <div className={styles.parentDiv}>
+            <div className={styles.salarySrc}>
+                <label htmlFor="car-brand">
+                    جهة تحويل الراتب
+                </label>
+                <select required name="bank" id="bank">
+                    <option value="">اختر البنك</option>
+                    <option value="alrajhi">البنك الأهلي التجاري</option>
+                    <option value="alrajhi">الراجحي</option>
+                    <option value="samba">سامبا</option>
+                    <option value="riyad">بنك الرياض</option>
+                    <option value="albilad">البلاد</option>
+                    <option value="alinma">الإنماء</option>
+                    <option value="alfransi">الفرنسي</option>
+                    <option value="saab">بنك السعودية البريطاني (ساب)</option>
+                    <option value="aljazeera">بنك الجزيرة</option>
+                    <option value="saudi_invest">بنك الاستثمار السعودي</option>
+                    <option value="saudi_post">بنك التسليف والادخار</option>
+                    <option value="bsf">البنك السعودي الفرنسي</option>
+                    <option value="anb">البنك العربي الوطني</option>
+                    <option value="mussafah">مصرف الراجحي</option>
+                    <option value="alinsaat">بنك الإنشاء والتعمير</option>
+                    <option value="saudi_hollandi">بنك السعودية الهولندي</option>
+                    <option value="gulf">بنك الخليج الدولي</option>
+                    <option value="emirates_nbd">بنك الإمارات دبي الوطني</option>
+                    <option value="other">بنك آخر</option>
+                </select>
+
+            </div>
+            <div className={styles.salary}>
+                <label htmlFor="salary">
+                        {/* {
+                            t("salary.label")
+                        } */}
+                        صافي الراتب
+                </label>
+                <input
+                type="salary"
+                id="salary"
+                name="number"
+                // placeholder={`${t("email.placeholder")}`}
+                placeholder='صافي الراتب بالريال السعودي'
+                // value={formData.email}
+                onChange={handleChange}
+                required
+                />
+            </div>
+        </div>
+
+        <div className={styles.parentDiv}>
+            <div className={styles.yesNo}>
+                <label htmlFor="">هل لديك تمويل عقاري؟</label>
+                <div>
+                    <div>
+                        <input type="radio" required id="yes-finance" name="finance" value="yes-finance" />
+                        <label htmlFor="yes-finance">نعم</label> 
+                    </div>
+                    <div>
+                        <input type="radio" required id="no-finance" name="finance" value="no-finance" />
+                        <label htmlFor="no-finance">لا</label> 
+                    </div>
+                </div>
+            </div>
+            
+            <div className={styles.yesNo}>
+                <label htmlFor="">هل لديك تعثر في سمة؟</label>
+                <div>
+                    <div>
+                        <input type="radio" required id="yes-sema" name="sema" value="yes-sema" />
+                        <label htmlFor="yes-sema">نعم</label> 
+                    </div>
+                    <div>
+                        <input type="radio" required id="no-sema" name="sema" value="no-sema" />
+                        <label htmlFor="no-sema">لا</label> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <label htmlFor="email">
+                    {/* {
+                        t("email.label")
+                    } */}
+                    إجمالي الالتزامات المالية الشهرية
+            </label>
+            <input
+            type="number"
+            id="obligations"
+            name="obligations"
+            // placeholder={`${t("obligations.placeholder")}`}
+            placeholder='بالريال السعودي'
+            // value={formData.email}
+            onChange={handleChange}
+            required
+            />
+        </div>
+
 
         <div>
             <label htmlFor="message">

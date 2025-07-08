@@ -13,7 +13,7 @@
   --main-gradient: linear-gradient(90deg, var(--lighter-color) 0%, var(--main-color) 100%);
 
   --features-card-bg: rgba(8, 7, 7, 0.2);
-  --main-card-animation-color: #415ede;
+  --main-card-animation-color: #38207f;
   --card-bg-semi-trans: #eaeaeac2;
   --important-text-color: var(--main-color);
 }
