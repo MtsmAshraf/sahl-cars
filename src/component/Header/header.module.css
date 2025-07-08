@@ -9,9 +9,10 @@
     isolation: isolate;
     /* background-color: transparent; */
     backdrop-filter: blur(15px);
-    background-color: #fff;
-    border-radius: 0px 0px 30px 30px;
+    background-color: #ffffffa4;
+    border-radius: 0px 0px 50px 50px;
     border-bottom: 1px solid var(--main-color);
+    box-shadow: var(--sec-shadow);
 }
 .header > div{
     display: flex;
@@ -37,6 +38,7 @@
     background-color: #fff;
     border-bottom: 2px solid var(--main-color);
     /* box-shadow: var(--sec-shadow); */
+    box-shadow: var(--sec-shadow);
 }
 @media (max-width: 600px) {
     .header .logo{
@@ -65,27 +67,41 @@
     /* background-color: #fff;
     color: var(--main-color);*/
     border: 1px solid var(--main-color); 
-    padding: 4px 16px;
-    border-radius: 6px;
+    /* padding: 4px 16px; */
+
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0px;
     direction: ltr !important;
     box-shadow: var(--main-shadow);
     transition: var(--main-transition);
     height: 30px;
+    width: 30px;
+    border-radius: 50%;
 }
 .header .links > div a span{
     width: 0;
     overflow: hidden;
     transition: var(--main-transition);
 }
+@media (max-width: 600px) {
+    .header{
+        border-radius: 0px 0px 30px 30px;
+    }
+}
 @media (min-width: 600px) {
     .header .links > div a:hover{
         gap: 5px;
         background-image: var(--main-gradient);
+        border-radius: 10px;
     }
-        
+    .header .links > div a:hover:first-child{
+        width: 120px;
+    }
+    .header .links > div a:hover:last-child{
+        width: 150px;
+    }
     .header .links > div a:hover:first-child span{
         width: 60px;
     }

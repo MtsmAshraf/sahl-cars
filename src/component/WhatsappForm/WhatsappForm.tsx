@@ -16,10 +16,19 @@ export default function WhatsAppForm({
 
 const [formData, setFormData] = useState({
     name: '',
+    phone: '',
     email: '',
     dateOfBirth: '',
     gender: '',
-    phone: '',
+    carBrand: '',
+    carModel: '',
+    work: '',
+    insurence: '',
+    salarySrc: '',
+    salary: '',
+    obligations: '',
+    sema: '',
+    totalObligationPerMonth: '',
     message: ''
 });
 
@@ -37,8 +46,19 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     // Format the message
     const whatsappMessage = `New Contact Message from Sahl Cars Website:%0A%0A` +
     `Name: ${formData.name}%0A` +
-    `Email: ${formData.email}%0A` +
     `Phone: ${formData.phone}%0A` +
+    `Email: ${formData.email}%0A` +
+    `Date Of Birth: ${formData.dateOfBirth}%0A` +
+    `Gender: ${formData.gender}%0A` +
+    `Car Brand: ${formData.carBrand}%0A` +
+    `Car Model: ${formData.carModel}%0A` +
+    `Work: ${formData.work}%0A` +
+    `Insurence: ${formData.insurence}%0A` +
+    `Salary Source: ${formData.salarySrc}%0A` +
+    `Salary: ${formData.salary}%0A` +
+    `Obligations: ${formData.obligations}%0A` +
+    `Sema: ${formData.sema}%0A` +
+    `Total Obligation Per Month: ${formData.totalObligationPerMonth}%0A` +
     `Message: ${formData.message}`;
     
     // Replace with your client's WhatsApp number (include country code, remove +, 0, or spaces)
@@ -139,11 +159,11 @@ return (
             <label htmlFor="">النوع</label>
             <div>
                 <div>
-                    <input type="radio" required id="male" name="gender" value="male" />
+                    <input onChange={handleChange} type="radio" required id="male" name="gender" value="male" />
                     <label htmlFor="male">ذكر</label> 
                 </div>
                 <div>
-                    <input type="radio" required id="female" name="gender" value="female" />
+                    <input onChange={handleChange} type="radio" required id="female" name="gender" value="female" />
                     <label htmlFor="female">أنثى</label> 
                 </div>
             </div>
@@ -154,7 +174,7 @@ return (
                 <label htmlFor="car-brand">
                     نوع السيارة
                 </label>
-                    <select onChange={(e) => {setSelectedBrand(e.target.value)}} required name="car-brand" id="car-brand">
+                    <select onChange={(e) => {setSelectedBrand(e.target.value); handleChange(e)}} required name="car-brand" id="car-brand">
                         <option value="">
                             اختر نوع السيارة
                         </option>
@@ -176,7 +196,7 @@ return (
                 {
                     selectedBrand !== "" && selectedBrand !== "other" ? 
                     
-                    <select style={{ filter: selectedBrand === "" ? "grayscale(100%)" : "grayscale(0%)", color: selectedBrand === "" ? "#aaa" : "#000",  }} required name="car-model" id="car-model" disabled={selectedBrand === "" ? true : false}>
+                    <select onChange={handleChange} style={{ filter: selectedBrand === "" ? "grayscale(100%)" : "grayscale(0%)", color: selectedBrand === "" ? "#aaa" : "#000",  }} required name="car-model" id="car-model" disabled={selectedBrand === "" ? true : false}>
                         <option value="">
                             {
                                 selectedBrand !== "" ? "موديل السيارة" : "اختر موديل السيارة أولا"
@@ -203,7 +223,7 @@ return (
                         }
                     </select> : 
                     selectedBrand === "other" ?
-                    <input type="text" placeholder='أدخل ماركة وموديل السيارة' />
+                    <input onChange={handleChange} type="text" placeholder='أدخل ماركة وموديل السيارة' />
                     :
                     selectedBrand === "" ?
                     <input value={""} name='other-brand' type="text" placeholder='اختر ماركة السيارة أولا' disabled style={{ backgroundColor: "#ccc" }}/> 
@@ -217,15 +237,15 @@ return (
             <label htmlFor="">جهة العمل (جهة صاحب العمل)</label>
             <div>
                 <div>
-                    <input type="radio" required id="gov-work" name="work" value="gov-work"/>
+                    <input onChange={handleChange} type="radio" required id="gov-work" name="work" value="gov-work"/>
                     <label htmlFor="gov-work">حكومي</label> 
                 </div>
                 <div>
-                    <input type="radio" required id="private-work" name="work" value="private-work" />
+                    <input onChange={handleChange} type="radio" required id="private-work" name="work" value="private-work" />
                     <label htmlFor="private-work">خاص</label> 
                 </div>
                 <div>
-                    <input type="radio" required id="other-work" name="work" value="other-work" />
+                    <input onChange={handleChange} type="radio" required id="other-work" name="work" value="other-work" />
                     <label htmlFor="other-work">آخر</label> 
                 </div>
             </div>
@@ -234,11 +254,11 @@ return (
             <label htmlFor="">هل أنت مسجل بالتأمينات الاجتماعية؟</label>
             <div>
                 <div>
-                    <input type="radio" required id="yes-insurence" name="insurence" value="yes-insurence"/>
+                    <input onChange={handleChange} type="radio" required id="yes-insurence" name="insurence" value="yes-insurence"/>
                     <label htmlFor="yes-insurence">نعم</label> 
                 </div>
                 <div>
-                    <input type="radio" required id="no--insurence" name="insurence" value="no--insurence" />
+                    <input onChange={handleChange} type="radio" required id="no--insurence" name="insurence" value="no--insurence" />
                     <label htmlFor="no--insurence">لا</label> 
                 </div>
             </div>
@@ -249,7 +269,7 @@ return (
                 <label htmlFor="car-brand">
                     جهة تحويل الراتب
                 </label>
-                <select required name="bank" id="bank">
+                <select onChange={handleChange} required name="bank" id="bank">
                     <option value="">اختر البنك</option>
                     <option value="alrajhi">البنك الأهلي التجاري</option>
                     <option value="alrajhi">الراجحي</option>
@@ -298,15 +318,15 @@ return (
                 <label htmlFor="">هل لديك التزامات؟</label>
                 <div>
                     <div>
-                        <input onChange={(e) => {setSelectedObl(e.target.value)}} type="radio" required id="state-obl" name="obl" value="state-obl" />
+                        <input onChange={(e) => {setSelectedObl(e.target.value); handleChange(e)}} type="radio" required id="state-obl" name="obl" value="state-obl" />
                         <label htmlFor="state-obl">تمويل عقاري</label> 
                     </div>
                     <div>
-                        <input onChange={(e) => {setSelectedObl(e.target.value)}} type="radio" required id="personal-obl" name="obl" value="personal-obl" />
+                        <input onChange={(e) => {setSelectedObl(e.target.value); handleChange(e)}} type="radio" required id="personal-obl" name="obl" value="personal-obl" />
                         <label htmlFor="personal-obl">تمويل شخصي</label> 
                     </div>
                     <div>
-                        <input onChange={(e) => {setSelectedObl(e.target.value)}} type="radio" required id="other-obl" name="obl" value="other-obl" />
+                        <input onChange={(e) => {setSelectedObl(e.target.value); handleChange(e)}} type="radio" required id="other-obl" name="obl" value="other-obl" />
                         <label htmlFor="other-obl">أخرى</label> 
                     </div>
                 </div>
@@ -337,11 +357,11 @@ return (
                 <label htmlFor="">هل لديك تعثر في سمة؟</label>
                 <div>
                     <div>
-                        <input type="radio" required id="yes-sema" name="sema" value="yes-sema" />
+                        <input onChange={handleChange} type="radio" required id="yes-sema" name="sema" value="yes-sema" />
                         <label htmlFor="yes-sema">نعم</label> 
                     </div>
                     <div>
-                        <input type="radio" required id="no-sema" name="sema" value="no-sema" />
+                        <input onChange={handleChange} type="radio" required id="no-sema" name="sema" value="no-sema" />
                         <label htmlFor="no-sema">لا</label> 
                     </div>
                 </div>
