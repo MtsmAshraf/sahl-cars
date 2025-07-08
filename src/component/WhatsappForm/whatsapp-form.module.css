@@ -1,9 +1,9 @@
 .whatsappForm{
     width: 700px;
-    max-width: 100%;
+    width: 100%;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 50px;
+    /* margin-top: 50px; */
     /* background-image: var(--main-gradient); */
     background-color: #fff;
     /* color: #fff; */
