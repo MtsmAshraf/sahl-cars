@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import styles from "./whatsapp-form.module.css"
 import { useTranslations } from 'next-intl';
+import carBrands from './carBrands';
 export default function WhatsAppForm({
   lo
 } : {
@@ -44,6 +45,8 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     // Open WhatsApp with the pre-filled message
     window.open(`https://wa.me/${phoneNumber}?text=${whatsappMessage}`, '_blank');
 };
+
+const [selectedBrand, setSelectedBrand] = useState("")
 
 return (
     <form className={lo === "ar" ? styles.whatsappForm + " " + styles.ar : styles.whatsappForm} onSubmit={handleSubmit} >
@@ -149,32 +152,50 @@ return (
                 <label htmlFor="car-brand">
                     نوع السيارة
                 </label>
-                    <select required name="car-brand" id="car-brand">
-                        <option value="">اختر نوع السيارة</option>
-                        <option value="new-toyota">تويوتا جديدة</option>
-                        <option value="used-toyota">تويوتا مستعملة</option> <option value="">تويوتا جديدة</option>
-                        <option value="new-other">ماركات أخرى جديدة</option>
-                        <option value="used-other">ماركات أخرى مستعملة</option>
+                    <select onChange={(e) => {setSelectedBrand(e.target.value)}} required name="car-brand" id="car-brand">
+                        <option value="">
+                            اختر نوع السيارة
+                        </option>
+                        {
+                            carBrands.map((brand) => {
+                                return(
+                                    <option key={brand.id} value={brand.value.toLowerCase()}>
+                                        {brand.brandName}
+                                    </option>
+                                )
+                            })
+                        }
                     </select>
             </div>
             <div>
-                <label htmlFor="budget">
-                    الميزانية التقريبية
+                <label htmlFor="car-model">
+                    موديل السيارة
                 </label>
-                    <select required name="budget" id="budget">
-                        <option value="">اختر الميزانية التقريبية</option>
-                        <option value="fifty-to-one-hundred">
-                            50,000 - 100,000 ريال
+                    <select style={{ filter: selectedBrand === "" ? "grayscale(100%)" : "grayscale(0%)", color: selectedBrand === "" ? "#aaa" : "#000",  }} required name="car-model" id="car-model" disabled={selectedBrand === "" ? true : false}>
+                        <option value="">
+                            {
+                                selectedBrand !== "" ? "موديل السيارة" : "اختر موديل السيارة أولا"
+                            }
                         </option>
-                        <option value="one-hundred-to-two-hundred">
-                            100,000 - 200,000 ريال
-                        </option>
-                        <option value="two-hundred-to-three-hundred">
-                            200,000 - 300,000 ريال
-                        </option>
-                        <option value="more-than-three-hundred">
-                            أكثر من 300,000 ريال
-                        </option>
+                        {
+                            selectedBrand ? 
+                            carBrands.map((brand) => {
+                                return(
+                                    brand.value.toLowerCase() === selectedBrand ? 
+                                    brand.models.map((model: string, index: number) => {
+                                        return(
+                                            <option key={index} value={brand.value}>
+                                                {model}
+                                            </option>
+                                        )
+                                    })
+                                    : 
+                                    null
+                                )
+                            })
+                            :
+                            null
+                        }
                     </select>
             </div>
         </div>

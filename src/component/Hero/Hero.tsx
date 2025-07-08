@@ -19,6 +19,7 @@ const Hero = ({
         opacity: 0,
         // ease: "circ",
         duration: 0.8, 
+        delay: 0.4,
         // stagger: 0.1 // this means the delat betweem the staggered elememts is 0.1
         stagger: {
             amount: 0.3,
@@ -27,6 +28,14 @@ const Hero = ({
             // ease: "circ.inOut",
             // from: "random"
         }
+    })
+    gsap.from("#hero-img", {
+        x: -100,
+        opacity: 0,
+        filter: "blur(20px)",
+        // ease: "circ",
+        duration: 0.6,
+        delay: 0.6
     })
      }, [])
   return (
@@ -61,7 +70,7 @@ const Hero = ({
                     </a>
                 </div>
             </div>
-            <div className={styles.img}>
+            <div id='hero-img' className={styles.img}>
                 <DotLottieReact 
                 // src="https://lottie.host/cbab1bf0-9443-4f8d-8fa7-46489702ba56/xVHiC3sM2T.json" 
                 // src="https://lottie.host/5fe284c4-cfee-4d60-8d30-e6b4a11c89d9/v1W3TAjATe.lottie"
