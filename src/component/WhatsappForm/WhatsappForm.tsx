@@ -171,6 +171,9 @@ return (
                 <label htmlFor="car-model">
                     موديل السيارة
                 </label>
+                {
+                    selectedBrand !== "" && selectedBrand !== "other" ? 
+                    
                     <select style={{ filter: selectedBrand === "" ? "grayscale(100%)" : "grayscale(0%)", color: selectedBrand === "" ? "#aaa" : "#000",  }} required name="car-model" id="car-model" disabled={selectedBrand === "" ? true : false}>
                         <option value="">
                             {
@@ -182,7 +185,7 @@ return (
                             carBrands.map((brand) => {
                                 return(
                                     brand.value.toLowerCase() === selectedBrand ? 
-                                    brand.models.map((model: string, index: number) => {
+                                    brand.models?.map((model: string, index: number) => {
                                         return(
                                             <option key={index} value={brand.value}>
                                                 {model}
@@ -196,7 +199,15 @@ return (
                             :
                             null
                         }
-                    </select>
+                    </select> : 
+                    selectedBrand === "other" ?
+                    <input type="text" placeholder='أدخل ماركة وموديل السيارة' />
+                    :
+                    selectedBrand === "" ?
+                    <input value={""} type="text" placeholder='اختر ماركة السيارة أولا' disabled style={{ backgroundColor: "#ccc" }}/> 
+                    :
+                    null
+                }
             </div>
         </div>
 

@@ -3,7 +3,7 @@ export type Product = {
     id: string,
     brandName: string,
     value: string,
-    models: string[]
+    models?: string[]
 }
 
 const carBrands : Product[] = [
@@ -154,6 +154,11 @@ const carBrands : Product[] = [
             "X6",
             "X7"
         ]
+    },
+    {
+        id: "12",
+        brandName: "أخرى",
+        value: "other"
     }
 ]
 
