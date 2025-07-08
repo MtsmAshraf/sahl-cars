@@ -4,6 +4,8 @@ import { useState } from 'react';
 import styles from "./whatsapp-form.module.css"
 import { useTranslations } from 'next-intl';
 import carBrands from './carBrands';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 export default function WhatsAppForm({
   lo
 } : {
@@ -47,6 +49,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 };
 
 const [selectedBrand, setSelectedBrand] = useState("")
+const [selectedObl, setSelectedObl] = useState("")
 
 return (
     <form className={lo === "ar" ? styles.whatsappForm + " " + styles.ar : styles.whatsappForm} onSubmit={handleSubmit} >
@@ -97,24 +100,23 @@ return (
             </div>
         </div>
         
-        <div>
-            <label htmlFor="email">
-                    {
-                        t("email.label")
-                    }
-            </label>
-            <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder={`${t("email.placeholder")}`}
-            value={formData.email}
-            onChange={handleChange}
-            required
-            />
-        </div>
-
         <div className={styles.parentDiv}>
+            <div>
+                <label htmlFor="email">
+                        {
+                            t("email.label")
+                        }
+                </label>
+                <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder={`${t("email.placeholder")}`}
+                value={formData.email}
+                onChange={handleChange}
+                required
+                />
+            </div>
             <div>
                 <label htmlFor="date">
                         {/* {
@@ -126,23 +128,23 @@ return (
                     type="date"
                     id="date"
                     name="date"
-                    value={formData.dateOfBirth}
+                    // value={formData.dateOfBirth}
                     onChange={handleChange}
                     required
                 />
             </div>
-                
-            <div className={styles.yesNo}>
-                <label htmlFor="">النوع</label>
+        </div>
+
+        <div className={styles.yesNo}>
+            <label htmlFor="">النوع</label>
+            <div>
                 <div>
-                    <div>
-                        <input type="radio" required id="male" name="gender" value="male" />
-                        <label htmlFor="male">ذكر</label> 
-                    </div>
-                    <div>
-                        <input type="radio" required id="female" name="gender" value="female" />
-                        <label htmlFor="female">أنثى</label> 
-                    </div>
+                    <input type="radio" required id="male" name="gender" value="male" />
+                    <label htmlFor="male">ذكر</label> 
+                </div>
+                <div>
+                    <input type="radio" required id="female" name="gender" value="female" />
+                    <label htmlFor="female">أنثى</label> 
                 </div>
             </div>
         </div>
@@ -208,24 +210,6 @@ return (
                     :
                     null
                 }
-            </div>
-        </div>
-
-        <div className={styles.yesNo}>
-            <label htmlFor="">هل لديك؟</label>
-            <div>
-                <div>
-                    <input type="radio" required id="yes" name="boolean-input" value="yes"/>
-                    <label htmlFor="yes">نعم</label> 
-                </div>
-                <div>
-                    <input type="radio" required id="no" name="boolean-input" value="no" />
-                    <label htmlFor="no">لا</label> 
-                </div>
-                <div>
-                    <input type="radio" required id="maybe" name="boolean-input" value="maybe" />
-                    <label htmlFor="maybe">ربما</label> 
-                </div>
             </div>
         </div>
 
@@ -309,21 +293,46 @@ return (
             </div>
         </div>
 
-        <div className={styles.parentDiv}>
+        {/* <div className={styles.parentDiv}> */}
             <div className={styles.yesNo}>
-                <label htmlFor="">هل لديك تمويل عقاري؟</label>
+                <label htmlFor="">هل لديك التزامات؟</label>
                 <div>
                     <div>
-                        <input type="radio" required id="yes-finance" name="finance" value="yes-finance" />
-                        <label htmlFor="yes-finance">نعم</label> 
+                        <input onChange={(e) => {setSelectedObl(e.target.value)}} type="radio" required id="state-obl" name="obl" value="state-obl" />
+                        <label htmlFor="state-obl">تمويل عقاري</label> 
                     </div>
                     <div>
-                        <input type="radio" required id="no-finance" name="finance" value="no-finance" />
-                        <label htmlFor="no-finance">لا</label> 
+                        <input onChange={(e) => {setSelectedObl(e.target.value)}} type="radio" required id="personal-obl" name="obl" value="personal-obl" />
+                        <label htmlFor="personal-obl">تمويل شخصي</label> 
+                    </div>
+                    <div>
+                        <input onChange={(e) => {setSelectedObl(e.target.value)}} type="radio" required id="other-obl" name="obl" value="other-obl" />
+                        <label htmlFor="other-obl">أخرى</label> 
                     </div>
                 </div>
             </div>
-            
+            {
+                selectedObl === "other-obl" && 
+                    
+                <div>
+                    <label htmlFor="email">
+                            {/* {
+                                t("email.label")
+                            } */}
+                            الالتزامات الأخرى
+                    </label>
+                    <input
+                        type="number"
+                        id="obligations"
+                        name="obligations"
+                        // placeholder={`${t("obligations.placeholder")}`}
+                        placeholder='ما هي التزاماتك؟'
+                        // value={formData.email}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+            }
             <div className={styles.yesNo}>
                 <label htmlFor="">هل لديك تعثر في سمة؟</label>
                 <div>
@@ -337,9 +346,9 @@ return (
                     </div>
                 </div>
             </div>
-        </div>
+        {/* </div> */}
         <div>
-            <label htmlFor="email">
+            <label htmlFor="obligations">
                     {/* {
                         t("email.label")
                     } */}
@@ -376,7 +385,12 @@ return (
         <button
             type="submit"
         >
-            Send via WhatsApp
+            <span>
+                {
+                    t("submit")
+                }
+            </span>
+            <FontAwesomeIcon icon={faWhatsapp} />
         </button>
     </form>
 );

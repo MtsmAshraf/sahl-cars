@@ -72,7 +72,8 @@
         "message": {
           "label": "Additional Message (Optional)",
           "placeholder": ""
-        }
+        },
+        "submit": "Send via Whatsapp"
       }
     }
   }
