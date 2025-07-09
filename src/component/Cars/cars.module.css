@@ -1,0 +1,115 @@
+.cars{
+    background-color: #fff;
+    padding-top: 30px;
+}
+.cars .swiper{
+    position: relative;
+    padding-bottom: 40px;
+}
+.cars .swiper .carsSwiper{
+    padding-bottom: 20px;
+}
+
+.cars .carsSwiper .slide{
+    background-color: #eee;
+    border-radius: 20px;
+    box-shadow: var(--main-shadow);
+    border: 2px solid #ccc;
+    transition: var(--main-transition);
+    overflow: hidden;
+}
+.cars.ar .slide{
+    direction: rtl;
+}
+
+.cars .slide .img{
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.cars .slide .img .spanLink{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,200%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-right: auto;
+    margin-right: left;
+    margin: 20px auto 0px;
+    width: fit-content;
+    /* background-color: var(--main-color); */
+    /* background-image:linear-gradient(90deg, var(--lighter-color) 20%, var(--main-color) 100%); */
+    /* background-image: var(--main-gradient);
+    background-size: 200%;
+    background-position: right; */
+    color: #fff;
+    background-color: #ffffff3e;
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--text-color);
+    padding: 6px 20px;
+    font-size: 18px;
+    transition: var(--main-transition);
+    border-radius: 6px;
+    background-image: var(--main-gradient);
+}
+.cars .img img{
+
+}
+.cars .slide:hover{
+    border: 2px solid var(--main-color);
+    /* border-color: var(--main-color); */
+}
+.cars .slide:hover .img .spanLink{
+    gap: 15px;
+    transform: translate(-50%,-50%);
+}
+.cars .slide .text{
+    padding: 20px;
+}
+.cars .slide h3{
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+}
+.cars .swiper button{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #eee;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 20px;
+    transition: var(--main-transition);
+    transition-duration: 0.1s;
+}
+.cars .swiper button:first-of-type{
+    left: -40px;
+}
+.cars .swiper button:last-of-type{
+    right: -40px;
+}
+.cars .swiper button:hover{
+    background-color: var(--main-color);
+    color: #fff;
+}
+.cars .swiper .brandsPagination{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.cars .swiper .brandsPagination span{
+    background-image: var(--main-gradient);
+}

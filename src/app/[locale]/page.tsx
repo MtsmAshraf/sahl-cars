@@ -6,6 +6,7 @@ import Hero from "@/component/Hero/Hero";
 import Features from "@/component/Features/Features";
 import Steps from "@/component/Steps/Steps";
 import Partners from "@/component/Partners/Partners";
+import Cars from "@/component/Cars/Cars";
 
 export default async function Home({
   params
@@ -19,6 +20,7 @@ export default async function Home({
     <main>
       <Hero lo={locale} />
       <Features lo={locale} />
+      <Cars lo={locale} />
       <Steps lo={locale} />
       <Partners />
       <Contact lo={locale}/>
