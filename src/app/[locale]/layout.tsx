@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import Header from "@/component/Header/Header";
 // import icon from "../../../public/images/logo.png"
 import icon from "./favicon.ico"
+import { Footer } from "@/component/Footer/Footer";
 
 
 export const metadata: Metadata = {
@@ -34,6 +35,7 @@ export default async function RootLayout({
         <NextIntlClientProvider>
           <Header lo={locale}></Header>
           {children}
+          <Footer></Footer>
         </NextIntlClientProvider>
       </body>
     </html>

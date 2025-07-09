@@ -285,7 +285,7 @@ return (
         
         <div className={styles.parentDiv}>
             <div className={styles.salarySrc}>
-                <label htmlFor="car-brand">
+                <label htmlFor="bank">
                     جهة تحويل الراتب
                 </label>
                 <select onChange={handleChange} required name="salarySrc" id="bank">

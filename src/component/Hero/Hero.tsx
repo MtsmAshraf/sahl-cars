@@ -5,6 +5,8 @@ import { useTranslations } from 'next-intl'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { DotLottieReact } from '@lottiefiles/dotlottie-react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 
 
 const Hero = ({
@@ -67,6 +69,7 @@ const Hero = ({
                         {
                             t("Hero.btns.b2")
                         }
+                        <FontAwesomeIcon icon={faWhatsapp} />
                     </a>
                 </div>
             </div>

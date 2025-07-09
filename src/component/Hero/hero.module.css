@@ -102,6 +102,9 @@
     box-shadow: var(--main-shadow);
     transition: var(--main-transition);
     border: 1px solid var(--main-color);
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 .hero > div:first-of-type .btns a:first-child{
     background-image: var(--main-gradient);

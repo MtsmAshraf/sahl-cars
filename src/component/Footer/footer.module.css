@@ -1,0 +1,15 @@
+.footer{
+    background-image: var(--main-gradient);   
+    width: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #fff;
+    border-radius: 6px 6px 0px 0px;
+}
+.footer a{
+    color: rgb(247, 247, 0);
+    font-weight: bold;
+    text-decoration: underline;
+}
