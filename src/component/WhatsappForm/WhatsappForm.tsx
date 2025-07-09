@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import styles from "./whatsapp-form.module.css"
 import { useTranslations } from 'next-intl';
-import carBrands from './carBrands';
+import carBrands, { CarBrand } from './carBrands';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 export default function WhatsAppForm({
@@ -198,7 +198,7 @@ return (
                             اختر نوع السيارة
                         </option>
                         {
-                            carBrands.map((brand) => {
+                            carBrands.map((brand: CarBrand) => {
                                 return(
                                     <option key={brand.id} value={brand.value.toLowerCase()}>
                                         {brand.brandName}
@@ -223,7 +223,7 @@ return (
                         </option>
                         {
                             selectedBrand ? 
-                            carBrands.map((brand) => {
+                            carBrands.map((brand: CarBrand) => {
                                 return(
                                     brand.value.toLowerCase() === selectedBrand ? 
                                     brand.models?.map((model: string, index: number) => {
@@ -291,16 +291,14 @@ return (
                 <select onChange={handleChange} required name="salarySrc" id="bank">
                     <option value="">اختر البنك</option>
                     <option value="alrajhi">البنك الأهلي التجاري</option>
-                    <option value="alrajhi">الراجحي</option>
                     <option value="samba">سامبا</option>
                     <option value="riyad">بنك الرياض</option>
                     <option value="albilad">البلاد</option>
                     <option value="alinma">الإنماء</option>
-                    <option value="alfransi">الفرنسي</option>
+                    <option value="alfransi">البنك العربي الفرنسي</option>
                     <option value="saab">بنك السعودية البريطاني (ساب)</option>
                     <option value="aljazeera">بنك الجزيرة</option>
                     <option value="saudi_invest">بنك الاستثمار السعودي</option>
-                    <option value="saudi_post">بنك التسليف والادخار</option>
                     <option value="bsf">البنك السعودي الفرنسي</option>
                     <option value="anb">البنك العربي الوطني</option>
                     <option value="mussafah">مصرف الراجحي</option>

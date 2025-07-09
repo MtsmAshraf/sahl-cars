@@ -1,12 +1,12 @@
 
-export type Product = {
+export type CarBrand = {
     id: string,
     brandName: string,
     value: string,
     models?: string[]
 }
 
-const carBrands : Product[] = [
+const carBrands : CarBrand[] = [
     {
         id: "1",
         brandName: "تويوتا (Toyota)",

@@ -11,11 +11,12 @@
     transition: var(--main-transition);
     /* height: 0; */
     overflow: hidden;
+
 }
 
 .partners .cards > div{
     display: grid;
-    grid-template-columns: repeat(6, minmax(20px,1fr));
+    grid-template-columns: repeat(5, minmax(20px,1fr));
     gap: 40px 100px;
     align-items: center;
     /* padding: 50px; */
@@ -24,6 +25,10 @@
     /* height: 100vh; */
 }
 .partners .cards .card{ 
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .partners .cards .card .img{ 
     padding: 10px;
