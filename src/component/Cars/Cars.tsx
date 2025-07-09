@@ -13,7 +13,6 @@ import { Swiper ,SwiperSlide } from 'swiper/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
-import test from "../../../public/images/imgi_14_800_677fd5ca4e432.png"
 import Image from 'next/image';
 import MainHeading from '../MainHeading/MainHeading';
 import allCars, { Car } from './allCar';
