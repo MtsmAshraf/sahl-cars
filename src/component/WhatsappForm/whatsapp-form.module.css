@@ -171,3 +171,38 @@
         
     }
 }
+.whatsappForm .whatsappLink{
+    border-top: 1px solid var(--main-color);
+    margin-top: 20px;
+    padding-top: 20px;
+    text-align: center;
+}
+.whatsappForm .whatsappLink p{
+    font-weight: bold;
+}
+.whatsappForm .whatsappLink a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-right: auto;
+    margin-right: left;
+    margin: 20px auto 0px;
+    width: fit-content;
+    /* background-color: var(--main-color); */
+    /* background-image:linear-gradient(90deg, var(--lighter-color) 20%, var(--main-color) 100%); */
+    background-image: var(--main-gradient);
+    background-size: 200%;
+    background-position: right;
+    color: #fff;
+    border: 1px solid var(--main-color);
+    padding: 6px 20px;
+    font-size: 18px;
+    transition: var(--main-transition);
+    border-radius: 6px;
+}
+.whatsappForm .whatsappLink a:hover{
+    /* background-color: transparent; */
+    background-position: left;
+    gap: 15px;
+}

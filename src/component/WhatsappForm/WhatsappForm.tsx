@@ -429,6 +429,15 @@ return (
             </span>
             <FontAwesomeIcon icon={faWhatsapp} />
         </button>
+        <div className={styles.whatsappLink}>
+            <p>
+                تريد التواصل في محادثة مفتوحة عبر واتساب؟
+            </p>
+            <a href="https://wa.me/+966505638988" target='_blank'>
+                تواصل معنا
+                <FontAwesomeIcon icon={faWhatsapp} />
+            </a>
+        </div>
     </form>
 );
 }
