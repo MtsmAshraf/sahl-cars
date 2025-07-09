@@ -62,7 +62,8 @@
     background-image: var(--main-gradient);
 }
 .cars .img img{
-
+    object-fit: contain;
+    height: 100%;
 }
 .cars .slide:hover{
     border: 2px solid var(--main-color);
@@ -112,4 +113,18 @@
 }
 .cars .swiper .brandsPagination span{
     background-image: var(--main-gradient);
+}
+@media (max-width: 767px) {
+        
+    .cars .swiper button:first-of-type{
+        left: 0px;
+        transform: translateY(-100%);
+        z-index: 2;
+    }
+    .cars .swiper button:last-of-type{
+        right: 0px;
+        transform: translateY(-100%);
+        z-index: 2;
+    }
+    
 }

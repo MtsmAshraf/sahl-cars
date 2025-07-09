@@ -51,6 +51,22 @@ const Cars = ({
                         nextEl: '.cars-swiper-button-next',
                         prevEl: '.cars-swiper-button-prev'
                     }}
+                        breakpoints={{
+                            400: {
+                            slidesPerView: 1,
+                            spaceBetween: 10
+                            },
+                            640: {
+                            slidesPerView: 1,
+                            spaceBetween: 10
+                            },
+                            768: {
+                            slidesPerView: 2,
+                            },
+                            1024: {
+                            slidesPerView: 3,
+                            },
+                        }}
                     >
                         {
                             allCars.map((car: Car) => {
