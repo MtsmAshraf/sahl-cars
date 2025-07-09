@@ -16,7 +16,7 @@
 
 .partners .cards > div{
     display: grid;
-    grid-template-columns: repeat(5, minmax(20px,1fr));
+    grid-template-columns: repeat(5, minmax(80px,1fr));
     gap: 40px 100px;
     align-items: center;
     /* padding: 50px; */
@@ -48,4 +48,36 @@
 .partners .cards .card .img img{ 
     width: 100%;
     object-fit: contain;
+}
+@media (max-width: 1200px) {
+    .partners .cards > div{
+        grid-template-columns: repeat(4, minmax(80px,1fr));
+        gap: 40px 80px;
+        /* padding: 50px; */
+    }
+}
+@media (max-width: 992px) {
+    .partners .cards > div{
+        grid-template-columns: repeat(3, minmax(80px,1fr));
+        /* padding: 50px; */
+        gap: 50px 80px;
+    }
+}
+@media (max-width: 767px) {
+    .partners .cards > div{
+        grid-template-columns: repeat(3, minmax(80px,1fr));
+        /* padding: 50px; */
+    }
+}
+@media (max-width: 500px) {
+    .partners .cards > div{
+        grid-template-columns: repeat(3, minmax(80px,1fr));
+        /* padding: 50px; */
+        gap: 20px 20px;
+    }
+    .partners .cards .card{ 
+        height: 120px;
+    }
+    .partners .cards .card .img{ 
+    }
 }
