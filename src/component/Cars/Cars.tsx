@@ -37,7 +37,7 @@ const Cars = ({
                     spaceBetween={50}
                     autoHeight={true}
                     className={styles.carsSwiper}
-                    slidesPerView={3}
+                    // slidesPerView={3}
                     modules={[Navigation, Pagination, Autoplay]}
                     
                     pagination={{
