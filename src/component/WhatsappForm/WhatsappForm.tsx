@@ -44,7 +44,26 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     
     // Format the message
-    const whatsappMessage = `New Contact Message from Sahl Cars Website:%0A%0A` +
+    const whatsappMessage = 
+    lo === "ar" ? 
+    `رسالة جديدة من موقع سهل كارز:%0A%0A` +
+    `الاسم: ${formData.name}%0A` +
+    `الجوال: ${formData.phone}%0A` +
+    `البريد الإلكتروني: ${formData.email}%0A` +
+    `تاريخ الميلاد: ${formData.dateOfBirth}%0A` +
+    `الجنس: ${formData.gender}%0A` +
+    `ماركة السيارة: ${formData.carBrand}%0A` +
+    `موديل السيارة: ${formData.carModel}%0A` +
+    `العمل: ${formData.work}%0A` +
+    `التأمين: ${formData.insurence}%0A` +
+    `مصدر الراتب: ${formData.salarySrc}%0A` +
+    `الراتب: ${formData.salary}%0A` +
+    `الالتزامات: ${formData.obligations}%0A` +
+    `السمة: ${formData.sema}%0A` +
+    `إجمالي الالتزامات الشهرية: ${formData.totalObligationPerMonth} ريال%0A` +
+    `الرسالة: ${formData.message}`
+    :
+    `New Contact Message from Sahl Cars Website:%0A%0A` +
     `Name: ${formData.name}%0A` +
     `Phone: ${formData.phone}%0A` +
     `Email: ${formData.email}%0A` +
@@ -58,7 +77,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     `Salary: ${formData.salary}%0A` +
     `Obligations: ${formData.obligations}%0A` +
     `Sema: ${formData.sema}%0A` +
-    `Total Obligation Per Month: ${formData.totalObligationPerMonth}%0A` +
+    `Total Obligation Per Month: ${formData.totalObligationPerMonth} SAR %0A` +
     `Message: ${formData.message}`;
     
     // Replace with your client's WhatsApp number (include country code, remove +, 0, or spaces)
@@ -147,7 +166,7 @@ return (
                 <input
                     type="date"
                     id="date"
-                    name="date"
+                    name="dateOfBirth"
                     // value={formData.dateOfBirth}
                     onChange={handleChange}
                     required
@@ -174,7 +193,7 @@ return (
                 <label htmlFor="car-brand">
                     نوع السيارة
                 </label>
-                    <select onChange={(e) => {setSelectedBrand(e.target.value); handleChange(e)}} required name="car-brand" id="car-brand">
+                    <select name="carBrand" onChange={(e) => {setSelectedBrand(e.target.value); handleChange(e)}} required id="car-brand">
                         <option value="">
                             اختر نوع السيارة
                         </option>
@@ -196,7 +215,7 @@ return (
                 {
                     selectedBrand !== "" && selectedBrand !== "other" ? 
                     
-                    <select onChange={handleChange} style={{ filter: selectedBrand === "" ? "grayscale(100%)" : "grayscale(0%)", color: selectedBrand === "" ? "#aaa" : "#000",  }} required name="car-model" id="car-model" disabled={selectedBrand === "" ? true : false}>
+                    <select name="carModel" onChange={handleChange} style={{ filter: selectedBrand === "" ? "grayscale(100%)" : "grayscale(0%)", color: selectedBrand === "" ? "#aaa" : "#000",  }} required id="car-model" disabled={selectedBrand === "" ? true : false}>
                         <option value="">
                             {
                                 selectedBrand !== "" ? "موديل السيارة" : "اختر موديل السيارة أولا"
@@ -223,7 +242,7 @@ return (
                         }
                     </select> : 
                     selectedBrand === "other" ?
-                    <input onChange={handleChange} type="text" placeholder='أدخل ماركة وموديل السيارة' />
+                    <input name='carBrand' onChange={handleChange} type="text" placeholder='أدخل ماركة وموديل السيارة' />
                     :
                     selectedBrand === "" ?
                     <input value={""} name='other-brand' type="text" placeholder='اختر ماركة السيارة أولا' disabled style={{ backgroundColor: "#ccc" }}/> 
@@ -269,7 +288,7 @@ return (
                 <label htmlFor="car-brand">
                     جهة تحويل الراتب
                 </label>
-                <select onChange={handleChange} required name="bank" id="bank">
+                <select onChange={handleChange} required name="salarySrc" id="bank">
                     <option value="">اختر البنك</option>
                     <option value="alrajhi">البنك الأهلي التجاري</option>
                     <option value="alrajhi">الراجحي</option>
@@ -301,9 +320,9 @@ return (
                         صافي الراتب
                 </label>
                 <input
-                type="salary"
+                type="number"
                 id="salary"
-                name="number"
+                name="salary"
                 // placeholder={`${t("email.placeholder")}`}
                 placeholder='صافي الراتب بالريال السعودي'
                 // value={formData.email}
@@ -318,15 +337,15 @@ return (
                 <label htmlFor="">هل لديك التزامات؟</label>
                 <div>
                     <div>
-                        <input onChange={(e) => {setSelectedObl(e.target.value); handleChange(e)}} type="radio" required id="state-obl" name="obl" value="state-obl" />
+                        <input onChange={(e) => {setSelectedObl(e.target.value); handleChange(e)}} type="radio" required id="state-obl" name="obligations" value="state-obl" />
                         <label htmlFor="state-obl">تمويل عقاري</label> 
                     </div>
                     <div>
-                        <input onChange={(e) => {setSelectedObl(e.target.value); handleChange(e)}} type="radio" required id="personal-obl" name="obl" value="personal-obl" />
+                        <input onChange={(e) => {setSelectedObl(e.target.value); handleChange(e)}} type="radio" required id="personal-obl" name="obligations" value="personal-obl" />
                         <label htmlFor="personal-obl">تمويل شخصي</label> 
                     </div>
                     <div>
-                        <input onChange={(e) => {setSelectedObl(e.target.value); handleChange(e)}} type="radio" required id="other-obl" name="obl" value="other-obl" />
+                        <input onChange={(e) => {setSelectedObl(e.target.value); handleChange(e)}} type="radio" required id="other-obl" name="obligations" value="other-obl" />
                         <label htmlFor="other-obl">أخرى</label> 
                     </div>
                 </div>
@@ -377,7 +396,7 @@ return (
             <input
             type="number"
             id="obligations"
-            name="obligations"
+            name="totalObligationPerMonth"
             // placeholder={`${t("obligations.placeholder")}`}
             placeholder='بالريال السعودي'
             // value={formData.email}

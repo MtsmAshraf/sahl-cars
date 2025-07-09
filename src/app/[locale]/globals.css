@@ -8,6 +8,7 @@
   --lighter-color: #5b49b7;
   --text-color: #000;
   --main-shadow: 0px 4px 14px -3px #ccc;
+  --inset-shadow: 0px 0px 10px -3px var(--main-color) inset;
   --sec-shadow: 0px 3px 15px -13px var(--main-color);
   --main-transition: all 0.3s 0s cubic-bezier(.47,.65,.33,.87);
   --main-gradient: linear-gradient(90deg, var(--lighter-color) 0%, var(--main-color) 100%);

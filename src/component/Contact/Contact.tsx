@@ -10,7 +10,7 @@ const Contact = ({
 }) => {
   const t = useTranslations("HomePage.Contact")
   return (
-    <section id='contact' className={styles.contact}>
+    <section id='contact' className={lo === "ar" ? styles.contact + " " + styles.ar : styles.contact}>
         
         <div className="container">
           <div>

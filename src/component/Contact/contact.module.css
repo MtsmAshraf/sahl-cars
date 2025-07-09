@@ -12,6 +12,9 @@
     padding-left: 0;
     padding-right: 0;
 }
+.contact.ar > div:nth-child(1){
+    flex-direction: row-reverse;
+}
 .contact > div:nth-child(1) > div{
     width: calc((100% - 20px) / 2);
 }
@@ -35,7 +38,8 @@
     box-shadow: var(--main-shadow);
 }
 @media (max-width: 1024px) {
-    .contact > div:nth-child(1){
+    .contact > div:nth-child(1),
+    .contact.ar > div:nth-child(1){
         flex-direction: column;
     }
     .contact > div:nth-child(1) > div{

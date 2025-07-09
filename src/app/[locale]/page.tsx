@@ -5,6 +5,7 @@ import "./globals.css";
 import Hero from "@/component/Hero/Hero";
 import Features from "@/component/Features/Features";
 import Steps from "@/component/Steps/Steps";
+import Partners from "@/component/Partners/Partners";
 
 export default async function Home({
   params
@@ -19,6 +20,7 @@ export default async function Home({
       <Hero lo={locale} />
       <Features lo={locale} />
       <Steps lo={locale} />
+      <Partners />
       <Contact lo={locale}/>
     </main>
   );

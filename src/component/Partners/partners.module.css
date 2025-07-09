@@ -1,0 +1,46 @@
+.partners{
+    padding-top: 30px;
+}
+.partners .cards{
+    background-color: #fff;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-top: 2px solid var(--main-color);
+    border-bottom: 2px solid var(--main-color);
+    box-shadow: var(--inset-shadow);
+    transition: var(--main-transition);
+    /* height: 0; */
+    overflow: hidden;
+}
+
+.partners .cards > div{
+    display: grid;
+    grid-template-columns: repeat(6, minmax(20px,1fr));
+    gap: 40px 100px;
+    align-items: center;
+    /* padding: 50px; */
+}
+.partners .cards:hover{
+    /* height: 100vh; */
+}
+.partners .cards .card{ 
+}
+.partners .cards .card .img{ 
+    padding: 10px;
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--lighter-color);
+    background-color: #eee;
+    box-shadow: var(--sec-shadow);
+    border: 1px solid var(--text-color);
+    /* background-color: red; */
+}
+.partners .cards .card .img img{ 
+    width: 100%;
+    object-fit: contain;
+}

@@ -23,7 +23,7 @@
     width: calc(100% / 3);
 }
 .header.ar{
-    direction: rtl;
+    /* direction: rtl; */
 }
 .header .logo{
     position: absolute;
