@@ -91,7 +91,7 @@ const [selectedBrand, setSelectedBrand] = useState("")
 const [selectedObl, setSelectedObl] = useState("")
 
 return (
-    <form className={lo === "ar" ? styles.whatsappForm + " " + styles.ar : styles.whatsappForm} onSubmit={handleSubmit} >
+    <form className={lo !== "en" ? styles.whatsappForm + " " + styles.ar : styles.whatsappForm} onSubmit={handleSubmit} >
         <div className={styles.formHeading}>
             <h4>
                 {
@@ -158,10 +158,9 @@ return (
             </div>
             <div>
                 <label htmlFor="date">
-                        {/* {
-                            t("date.label")
-                        } */}
-                        تاريخ الميلاد
+                        {
+                            t("dateOfBirth.label")
+                        }
                 </label>
                 <input
                     type="date"
@@ -175,15 +174,27 @@ return (
         </div>
 
         <div className={styles.yesNo}>
-            <label htmlFor="">النوع</label>
+            <label htmlFor="">
+                {
+                    t("gender.label")
+                }
+            </label>
             <div>
                 <div>
                     <input onChange={handleChange} type="radio" required id="male" name="gender" value="male" />
-                    <label htmlFor="male">ذكر</label> 
+                    <label htmlFor="male">
+                        {
+                            t("gender.options.male")
+                        }    
+                    </label> 
                 </div>
                 <div>
                     <input onChange={handleChange} type="radio" required id="female" name="gender" value="female" />
-                    <label htmlFor="female">أنثى</label> 
+                    <label htmlFor="female">
+                        {
+                            t("gender.options.female")
+                        }    
+                    </label> 
                 </div>
             </div>
         </div>
@@ -191,11 +202,15 @@ return (
         <div className={styles.parentDiv}>
             <div>
                 <label htmlFor="car-brand">
-                    نوع السيارة
+                    {
+                        t("carBrand.label")
+                    }
                 </label>
                     <select name="carBrand" onChange={(e) => {setSelectedBrand(e.target.value); handleChange(e)}} required id="car-brand">
                         <option value="">
-                            اختر نوع السيارة
+                            {
+                                t("carBrand.placeholder")
+                            }
                         </option>
                         {
                             carBrands.map((brand: CarBrand) => {
@@ -210,7 +225,9 @@ return (
             </div>
             <div>
                 <label htmlFor="car-model">
-                    موديل السيارة
+                        {
+                            t("carModel.label")
+                        }
                 </label>
                 {
                     selectedBrand !== "" && selectedBrand !== "other" ? 
@@ -218,7 +235,7 @@ return (
                     <select name="carModel" onChange={handleChange} style={{ filter: selectedBrand === "" ? "grayscale(100%)" : "grayscale(0%)", color: selectedBrand === "" ? "#aaa" : "#000",  }} required id="car-model" disabled={selectedBrand === "" ? true : false}>
                         <option value="">
                             {
-                                selectedBrand !== "" ? "موديل السيارة" : "اختر موديل السيارة أولا"
+                                selectedBrand !== "" ? t("carModel.label") : t("carModel.disabledPlaceholder")
                             }
                         </option>
                         {
@@ -242,10 +259,10 @@ return (
                         }
                     </select> : 
                     selectedBrand === "other" ?
-                    <input name='carBrand' onChange={handleChange} type="text" placeholder='أدخل ماركة وموديل السيارة' />
+                    <input name='carBrand' onChange={handleChange} type="text" placeholder={t("carModel.customPlaceholder")} />
                     :
                     selectedBrand === "" ?
-                    <input value={""} name='other-brand' type="text" placeholder='اختر ماركة السيارة أولا' disabled style={{ backgroundColor: "#ccc" }}/> 
+                    <input value={""} name='other-brand' type="text" placeholder={t("carModel.disabledPlaceholder")} disabled style={{ backgroundColor: "#ccc" }}/> 
                     :
                     null
                 }
@@ -253,32 +270,60 @@ return (
         </div>
 
         <div className={styles.yesNo}>
-            <label htmlFor="">جهة العمل (جهة صاحب العمل)</label>
+            <label htmlFor="">
+                {
+                    t("work.label")
+                }
+            </label>
             <div>
                 <div>
                     <input onChange={handleChange} type="radio" required id="gov-work" name="work" value="gov-work"/>
-                    <label htmlFor="gov-work">حكومي</label> 
+                    <label htmlFor="gov-work">
+                        {
+                            t("work.options.gov")
+                        }    
+                    </label> 
                 </div>
                 <div>
                     <input onChange={handleChange} type="radio" required id="private-work" name="work" value="private-work" />
-                    <label htmlFor="private-work">خاص</label> 
+                    <label htmlFor="private-work">
+                        {
+                            t("work.options.private")
+                        }    
+                    </label> 
                 </div>
                 <div>
                     <input onChange={handleChange} type="radio" required id="other-work" name="work" value="other-work" />
-                    <label htmlFor="other-work">آخر</label> 
+                    <label htmlFor="other-work">
+                        {
+                            t("work.options.other")
+                        }    
+                    </label> 
                 </div>
             </div>
         </div>
         <div className={styles.yesNo}>
-            <label htmlFor="">هل أنت مسجل بالتأمينات الاجتماعية؟</label>
+            <label htmlFor="">
+                {
+                    t("insurence.label")
+                }
+            </label>
             <div>
                 <div>
                     <input onChange={handleChange} type="radio" required id="yes-insurence" name="insurence" value="yes-insurence"/>
-                    <label htmlFor="yes-insurence">نعم</label> 
+                    <label htmlFor="yes-insurence">
+                        {
+                            t("insurence.options.yes")
+                        }    
+                    </label> 
                 </div>
                 <div>
-                    <input onChange={handleChange} type="radio" required id="no--insurence" name="insurence" value="no--insurence" />
-                    <label htmlFor="no--insurence">لا</label> 
+                    <input onChange={handleChange} type="radio" required id="no-insurence" name="insurence" value="no-insurence" />
+                    <label htmlFor="no-insurence">
+                        {
+                            t("insurence.options.no")
+                        }    
+                    </label> 
                 </div>
             </div>
         </div>
@@ -286,10 +331,16 @@ return (
         <div className={styles.parentDiv}>
             <div className={styles.salarySrc}>
                 <label htmlFor="bank">
-                    جهة تحويل الراتب
+                    {
+                        t("salarySrc.label")
+                    }
                 </label>
                 <select onChange={handleChange} required name="salarySrc" id="bank">
-                    <option value="">اختر البنك</option>
+                    <option value="">
+                        {
+                            t("salarySrc.placeholder")
+                        }
+                    </option>
                     <option value="alrajhi">البنك الأهلي التجاري</option>
                     <option value="samba">سامبا</option>
                     <option value="riyad">بنك الرياض</option>
@@ -312,18 +363,15 @@ return (
             </div>
             <div className={styles.salary}>
                 <label htmlFor="salary">
-                        {/* {
+                        {
                             t("salary.label")
-                        } */}
-                        صافي الراتب
+                        }
                 </label>
                 <input
                 type="number"
                 id="salary"
                 name="salary"
-                // placeholder={`${t("email.placeholder")}`}
-                placeholder='صافي الراتب بالريال السعودي'
-                // value={formData.email}
+                placeholder={t("salary.placeholder")}
                 onChange={handleChange}
                 required
                 />
@@ -332,19 +380,35 @@ return (
 
         {/* <div className={styles.parentDiv}> */}
             <div className={styles.yesNo}>
-                <label htmlFor="">هل لديك التزامات؟</label>
+                <label htmlFor="">
+                    {
+                        t("obligations.label")
+                    }
+                </label>
                 <div>
                     <div>
                         <input onChange={(e) => {setSelectedObl(e.target.value); handleChange(e)}} type="radio" required id="state-obl" name="obligations" value="state-obl" />
-                        <label htmlFor="state-obl">تمويل عقاري</label> 
+                        <label htmlFor="state-obl">
+                            {
+                                t("obligations.options.state")
+                            }    
+                        </label> 
                     </div>
                     <div>
                         <input onChange={(e) => {setSelectedObl(e.target.value); handleChange(e)}} type="radio" required id="personal-obl" name="obligations" value="personal-obl" />
-                        <label htmlFor="personal-obl">تمويل شخصي</label> 
+                        <label htmlFor="personal-obl">
+                            {
+                                t("obligations.options.personal")
+                            }    
+                        </label> 
                     </div>
                     <div>
                         <input onChange={(e) => {setSelectedObl(e.target.value); handleChange(e)}} type="radio" required id="other-obl" name="obligations" value="other-obl" />
-                        <label htmlFor="other-obl">أخرى</label> 
+                        <label htmlFor="other-obl">
+                            {
+                                t("obligations.options.other")
+                            }    
+                        </label> 
                     </div>
                 </div>
             </div>
@@ -352,52 +416,58 @@ return (
                 selectedObl === "other-obl" && 
                     
                 <div>
-                    <label htmlFor="email">
-                            {/* {
-                                t("email.label")
-                            } */}
-                            الالتزامات الأخرى
+                    <label htmlFor="other-obligations">
+                            {
+                                t("otherObligations.label")
+                            }
                     </label>
                     <input
-                        type="number"
-                        id="obligations"
-                        name="obligations"
-                        // placeholder={`${t("obligations.placeholder")}`}
-                        placeholder='ما هي التزاماتك؟'
-                        // value={formData.email}
+                        type="text"
+                        id="other-obligations"
+                        name="other-obligations"
+                        placeholder={`${t("otherObligations.placeholder")}`}
                         onChange={handleChange}
                         required
                     />
                 </div>
             }
             <div className={styles.yesNo}>
-                <label htmlFor="">هل لديك تعثر في سمة؟</label>
+                <label htmlFor="">
+                    {
+                        t("sema.label")
+                    }
+                </label>
                 <div>
                     <div>
                         <input onChange={handleChange} type="radio" required id="yes-sema" name="sema" value="yes-sema" />
-                        <label htmlFor="yes-sema">نعم</label> 
+                        <label htmlFor="yes-sema">
+                            {
+                                t("sema.options.yes")
+                            }    
+                        </label> 
                     </div>
                     <div>
                         <input onChange={handleChange} type="radio" required id="no-sema" name="sema" value="no-sema" />
-                        <label htmlFor="no-sema">لا</label> 
+                        <label htmlFor="no-sema">
+                            {
+                                t("sema.options.no")
+                            }    
+                        </label> 
                     </div>
                 </div>
             </div>
         {/* </div> */}
         <div>
-            <label htmlFor="obligations">
-                    {/* {
-                        t("email.label")
-                    } */}
-                    إجمالي الالتزامات المالية الشهرية
+            <label htmlFor="totalObl">
+                    {
+                        t("totalObl.label")
+                    }
             </label>
             <input
             type="number"
-            id="obligations"
-            name="totalObligationPerMonth"
-            // placeholder={`${t("obligations.placeholder")}`}
-            placeholder='بالريال السعودي'
-            // value={formData.email}
+            id="totalObl"
+            name="totalObl"
+            placeholder={`${t("totalObl.placeholder")}`}
             onChange={handleChange}
             required
             />
@@ -431,10 +501,14 @@ return (
         </button>
         <div className={styles.whatsappLink}>
             <p>
-                تريد التواصل في محادثة مفتوحة عبر واتساب؟
+                {
+                    t("whatsappLink.p")
+                }
             </p>
             <a href="https://wa.me/+966505638988" target='_blank'>
-                تواصل معنا
+                {
+                    t("whatsappLink.a")
+                }
                 <FontAwesomeIcon icon={faWhatsapp} />
             </a>
         </div>

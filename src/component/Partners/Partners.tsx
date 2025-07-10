@@ -3,12 +3,16 @@ import MainHeading from '../MainHeading/MainHeading'
 import styles from "./partners.module.css"
 import Image from 'next/image'
 import allBanks, { Bank } from './allBanks'
+import { useTranslations } from 'next-intl'
 
 const Partners = () => {
+    const t = useTranslations("HomePage.Partners")
   return (
     <section className={styles.partners}>
         <MainHeading>
-            شركاء النجاح
+            {
+                t("heading")
+            }
         </MainHeading>
         <div className={styles.cards}>
             <div className="container">

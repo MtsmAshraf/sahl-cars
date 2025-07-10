@@ -42,7 +42,7 @@ const Features = ({
    const t = useTranslations("HomePage.Why")
 
   return (
-    <section id="features" className={lo === "ar" ? styles.features + " " + styles.ar : styles.features}>
+    <section id="features" className={lo !== "en" ? styles.features + " " + styles.ar : styles.features}>
         <MainHeading>
             {t("heading")}
         </MainHeading>

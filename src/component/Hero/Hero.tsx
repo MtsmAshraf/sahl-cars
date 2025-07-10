@@ -41,7 +41,7 @@ const Hero = ({
     })
      }, [])
   return (
-    <section className={lo === "ar" ? styles.hero + " " + styles.ar : styles.hero} id='hero'>
+    <section className={lo !== "en" ? styles.hero + " " + styles.ar : styles.hero} id='hero'>
         <div className='container'>
             <div className={styles.text}>
                 <h2 className='stagger-text'>

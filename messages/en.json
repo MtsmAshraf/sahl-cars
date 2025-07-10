@@ -31,6 +31,10 @@
         "p": "Zero commission throughout the financing process."
       }
     },
+    "Cars": {
+      "heading": "Some Models",
+      "imgLink": "Contact to Order"
+    },
     "Steps": {
       "heading": "Application Steps",
       "0": {
@@ -49,6 +53,9 @@
         "heading": "Get final approval",
         "p": "صفر عمولة خلال عملية التمويل"
       }
+    },
+    "Partners": {
+      "heading": "Out Partners"
     },
     "Contact": {
       "heading": "Contact Us",
@@ -69,12 +76,83 @@
           "label": "Email",
           "placeholder": "username@example.com"
         },
+        "dateOfBirth": {
+          "label": "Date of Birth"
+        },
+        "gender": {
+          "label": "Gender",
+          "options": {
+            "male": "Male",
+            "female": "Female"
+          }
+        },
+        "carBrand": {
+          "label": "Car Brand",
+          "placeholder": "Select car Brand"
+        },
+        "carModel": {
+          "label": "Car Model",
+          "placeholder": "Select car model",
+          "disabledPlaceholder": "Select car Brand first",
+          "customPlaceholder": "Enter car Brand and model"
+        },
+        "work": {
+          "label": "Employer (Company/Organization)",
+          "options": {
+            "gov": "Government",
+            "private": "Private",
+            "other": "Other"
+          }
+        },
+        "insurence": {
+          "label": "Are you registered with Social Insurance?",
+          "options": {
+            "yes": "Yes",
+            "no": "No"
+          }
+        },
+        "salarySrc": {
+          "label": "Salary Transfer Bank",
+          "placeholder": "Select bank"
+        },
+        "salary": {
+          "label": "Net Salary",
+          "placeholder": "Net salary in Saudi Riyals"
+        },
+        "obligations": {
+          "label": "Do you have any financial obligations?",
+          "options": {
+            "state": "Mortgage",
+            "personal": "Personal Loan",
+            "other": "Other"
+          }
+        },
+        "otherObligations": {
+          "label": "Other Obligations",
+          "placeholder": "What are your obligations?"
+        },
+        "sema": {
+          "label": "Do you have any credit issues in SAMA?",
+          "options": {
+            "yes": "Yes",
+            "no": "No"
+          }
+        },
+        "totalObl": {
+          "label": "Total Monthly Financial Obligations",
+          "placeholder": "In Saudi Riyals"
+        },
         "message": {
           "label": "Additional Message (Optional)",
           "placeholder": ""
         },
-        "submit": "Send via Whatsapp"
-      }
+        "submit": "Send via WhatsApp",
+        "whatsappLink": {
+          "p": "Want to chat via WhatsApp?",
+          "a": "Contact Us"
+        }
+        },
+        "location": "Where Are We?"
     }
   }
 }

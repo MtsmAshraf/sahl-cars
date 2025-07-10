@@ -31,6 +31,10 @@
         "p": "صفر عمولة خلال عملية التمويل"
       }
     },
+    "Cars": {
+      "heading": "بعض الموديلات",
+      "imgLink": "التواصل للطلب"
+    },
     "Steps": {
       "heading": "خطوات طلب التمويل",
       "0": {
@@ -49,6 +53,9 @@
         "heading": "احصل على الموافقة النهائية",
         "p": "صفر عمولة خلال عملية التمويل"
       }
+    },
+    "Partners": {
+      "heading": "شركاء النجاح"
     },
     "Contact": {
       "heading": "تواصل معنا",
@@ -70,12 +77,84 @@
           "label": "الإيميل",
           "placeholder": "username@example.com"
         },
+        "dateOfBirth": {
+          "label": "تاریخ الميلاد"
+        },
+        "gender": {
+          "label": "النوع",
+          "options": {
+            "male": "ذكر",
+            "female": "أنثى"
+          }
+        },
+        "carBrand": {
+          "label": "نوع السيارة",
+          "placeholder": "اختر نوع السيارة"
+        },
+        "carModel": {
+          "label": "موديل السيارة",
+          "placeholder": "اختر موديل السيارة",
+          "disabledPlaceholder": "اختر نوع السيارة أولا",
+          "customPlaceholder": "أدخل نوع وموديل السيارة"
+        },
+        "work": {
+          "label": "جهة العمل (جهة صاحب العمل)",
+          "options" : {
+            "gov": "حكومي",
+            "private": "خاص",
+            "other": "آخر"
+          }
+        },
+        "insurence": {
+          "label": "هل أنت مسجل بالتأمينات الاجتماعية؟",
+          "options": {
+            "yes": "نعم",
+            "no": "لا"
+          }
+        },
+        "salarySrc": {
+          "label": "جهة تحويل الراتب",
+          "placeholder": "اختر البنك"
+        },
+        "salary": {
+          "label": "صافي الراتب",
+          "placeholder": "صافي الراتب بالريال السعودي"
+        },
+        "obligations": {
+          "label": "هل لديك التزامات؟",
+          "options": {
+            "state": "تمويل عقاري",
+            "personal": "تمويل شخصي",
+            "other": "أخرى"
+          }
+        },
+        "otherObligations": {
+          "label": "الالتزامات الأخرى",
+          "placeholder": "ما هي التزاماتك؟"
+        },
+        "sema": {
+          "label": "هل لديك تعثر في سمة؟",
+          "options": {
+            "yes": "نعم",
+            "no": "لا"
+          }
+        },
+        "totalObl": {
+          "label": "إجمالي الالتزامات المالية الشهرية",
+          "placeholder": "بالريال السعودي"
+        },
         "message": {
           "label": "رسالة إضافية (اختياري)",
           "placeholder": ""
         },
-        "submit": "إرسال عبر واتساب"
-      }
+        "submit": "إرسال عبر واتساب",
+        "whatsappLink": {
+          "p": "تريد التواصل في محادثة مفتوحة عبر واتساب؟",
+          "a": "تواصل معنا"
+        }
+      },
+
+      "location": "أين تجدنا؟"
     }
   }
 }

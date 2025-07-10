@@ -16,16 +16,20 @@ import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons
 import Image from 'next/image';
 import MainHeading from '../MainHeading/MainHeading';
 import allCars, { Car } from './allCar';
+import { useTranslations } from 'next-intl';
 
 const Cars = ({
     lo
 } : {
     lo: string
 }) => {
+    const t = useTranslations("HomePage.Cars")
   return (
-    <section className={lo === "ar" ? styles.cars + " " + styles.ar : styles.cars}>
+    <section className={lo !== "en" ? styles.cars + " " + styles.ar : styles.cars}>
         <MainHeading>
-            بعض الموديلات
+            {
+                t("heading")
+            }
         </MainHeading>
         <div className="container">
             <div className={styles.swiper}>
@@ -74,7 +78,9 @@ const Cars = ({
                                     <a href="#contact">
                                         <div className={styles.img}>
                                             <span className={styles.spanLink}>
-                                                التواصل للطلب
+                                                {
+                                                    t("imgLink")
+                                                }
                                             </span>
                                             <div className={styles.imgOverlay}></div>
                                             <Image src={car.src} alt='test'></Image>

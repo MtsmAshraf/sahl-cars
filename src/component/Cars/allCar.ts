@@ -13,31 +13,31 @@ export type Car = {
 }
 
 const allCars : Car[] = [
-     { 
+    { 
         id: "0", 
-        name: "هيونداي إلنترا 2025",
+        name: "Hyundai Elantra 2025",
         src: car0
     },
     { 
         id: "1", 
-        name: "تويوتا كامري 2025",
+        name: "Toyota Camry 2025",
         src: car1
     },
     { 
         id: "2", 
-        name: "تويوتا كورولا 2025",
+        name: "Toyota Corolla 2025",
         src: car2
     },
     { 
         id: "3", 
-        name: "تويوتا يارس 2024",
+        name: "Toyota Yaris 2024",
         src: car3
     },
     { 
         id: "4", 
-        name: "نيسان صني 2025",
+        name: "Nissan Sunny 2025",
         src: car4
-    },
+    }
 ]
 
 export default allCars;

@@ -18,7 +18,7 @@ const Steps = ({
 }) => {
     const t = useTranslations("HomePage.Steps")
   return (
-    <section className={lo === "ar" ? styles.steps + " " + styles.ar : styles.steps}>
+    <section className={lo !== "en" ? styles.steps + " " + styles.ar : styles.steps}>
         <MainHeading inverted>
             {
                 t("heading")

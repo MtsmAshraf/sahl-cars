@@ -10,8 +10,9 @@ const LangSwitch = ({
 }) => {
     const pathname = usePathname()
     const router = useRouter()
-    const changeLanguage = () => {
-        const nextLocale = lo === "en" ? "ar" : "en";
+    const changeLanguage = (selectedLang: string) => {
+        // const nextLocale = lo === "en" ? "ar" : "en";
+        const nextLocale = selectedLang;
         const splitPathname = pathname.split("/")
         splitPathname[1] = nextLocale;
         const jointPathname = splitPathname.join("/")
@@ -19,9 +20,10 @@ const LangSwitch = ({
     }
   return (
     // <button onClick={changeLanguage} className={lo === "ar" ? styles.ar + " " + styles.langSwitch : styles.langSwitch}>
-    <button onClick={changeLanguage} className={styles.langSwitch}>
-      <span className={lo === "ar" ? "hidden" : ""}>Ar</span>
-      <span className={lo === "en" ? "hidden" : ""}>En</span>
+    <button className={styles.langSwitch}>
+      <span onClick={() => {changeLanguage("ar")}} className={lo === "ar" ? styles.active : ""}>Ar</span>
+      <span onClick={() => {changeLanguage("en")}} className={lo === "en" ? styles.active : ""}>En</span>
+      <span onClick={() => {changeLanguage("ur")}} className={lo === "ur" ? styles.active : ""}>Ur</span>
     </button>
   )
 }
