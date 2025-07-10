@@ -76,6 +76,7 @@ const Cars = ({
                                             <span className={styles.spanLink}>
                                                 التواصل للطلب
                                             </span>
+                                            <div className={styles.imgOverlay}></div>
                                             <Image src={car.src} alt='test'></Image>
                                         </div>
                                         <div className={styles.text}>

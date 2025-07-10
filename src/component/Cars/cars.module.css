@@ -31,6 +31,7 @@
     height: 200px;
     padding: 20px;
     background-color: #fff;
+    isolation: isolate;
 }
 
 .cars .slide .img .spanLink{
@@ -60,10 +61,25 @@
     transition: var(--main-transition);
     border-radius: 6px;
     background-image: var(--main-gradient);
+    z-index: 2;
 }
 .cars .img img{
     object-fit: contain;
     height: 100%;
+}
+.cars .img .imgOverlay{
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #00000066;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: var(--main-transition);
+}
+.cars .slide:hover .img .imgOverlay{
+    opacity: 1;
 }
 .cars .slide:hover{
     border: 2px solid var(--main-color);
@@ -72,6 +88,15 @@
 .cars .slide:hover .img .spanLink{
     gap: 15px;
     transform: translate(-50%,-50%);
+}
+@media (max-width: 992px) {
+    .cars .slide .img .imgOverlay{
+        opacity: 0.7;
+    } 
+    .cars .slide .img .spanLink{
+        transform: translate(-50%,-50%);
+    }
+    
 }
 .cars .slide .text{
     padding: 20px;
