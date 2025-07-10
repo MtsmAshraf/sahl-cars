@@ -81,7 +81,9 @@ const Cars = ({
                                         </div>
                                         <div className={styles.text}>
                                             <h3>
-                                                هيونداي إلنترا 2025
+                                                {
+                                                    car.name
+                                                }
                                             </h3>
                                         </div>
                                     </a>

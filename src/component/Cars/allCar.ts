@@ -8,28 +8,34 @@ import car4 from "../../../public/images/imgi_79_thumbnail-up_caf7818161887621de
 
 export type Car = {
     id: string;
+    name: string;
     src: StaticImageData
 }
 
 const allCars : Car[] = [
      { 
         id: "0", 
+        name: "هيونداي إلنترا 2025",
         src: car0
     },
     { 
         id: "1", 
+        name: "تويوتا كامري 2025",
         src: car1
     },
     { 
         id: "2", 
+        name: "تويوتا كورولا 2025",
         src: car2
     },
     { 
         id: "3", 
+        name: "تويوتا يارس 2024",
         src: car3
     },
     { 
         id: "4", 
+        name: "نيسان صني 2025",
         src: car4
     },
 ]
