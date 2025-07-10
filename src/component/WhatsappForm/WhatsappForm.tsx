@@ -63,43 +63,47 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     `الالتزامات: ${formData.obligations === "state-obl" ? "تمويل عقاري" : formData.obligations === "personal-obl" ? "تمويل شخصي" : "أخرى"}%0A` +
     `التعثر في سمة: ${formData.sema === "yes-sema" ? "يوجد" : "لا يوجد"}%0A` +
     `إجمالي الالتزامات الشهرية: ${formData.totalObl} ريال%0A` +
-    `الرسالة: ${formData.message}`
+    `${formData.message !== "" ? `الرسالة: ${formData.message}` : ""}`
     :
     lo === "en" ?
-    `New Contact Message from Sahl Cars Website:%0A%0A` +
+    `New booking from Sahl Cars website:%0A%0A` +
     `Name: ${formData.name}%0A` +
     `Phone: ${formData.phone}%0A` +
     `Email: ${formData.email}%0A` +
-    `Date Of Birth: ${formData.dateOfBirth}%0A` +
-    `Gender: ${formData.gender}%0A` +
-    `Car Brand: ${formData.carBrand}%0A` +
-    `Car Model: ${formData.carModel}%0A` +
-    `Work: ${formData.work}%0A` +
-    `Insurence: ${formData.insurence}%0A` +
+    `Date of Birth: ${formData.dateOfBirth}%0A` +
+    `Gender: ${formData.gender === "male" ? "Male" : "Female"}%0A` +
+    `${selectedBrand !== "other" ? `Car Brand: ${formData.carBrand} %0A` : ""}` +
+    `${selectedBrand !== "other" ? `Car Model: ${formData.carModel} %0A` : ""}` +
+    `${selectedBrand === "other" ? `Car Model: ${formData.otherCarBrand} %0A` : ""}` +
+    `Employer: ${formData.work === "gov-work" ? "Government" : formData.work === "private-work" ? "Private" : "Neither"}%0A` +
+    `Social Insurance: ${formData.insurence === "yes-insurence" ? "Registered" : "Not Registered"}%0A` +
     `Salary Source: ${formData.salarySrc}%0A` +
-    `Salary: ${formData.salary}%0A` +
-    `Obligations: ${formData.obligations}%0A` +
-    `Sema: ${formData.sema}%0A` +
-    `Total Obligation Per Month: ${formData.totalObl} SAR %0A` +
-    `Message: ${formData.message}`
+    `Salary: ${formData.salary} SAR%0A` +
+    `Obligations: ${formData.obligations === "state-obl" ? "Mortgage" : formData.obligations === "personal-obl" ? "Personal Loan" : "Other"}%0A` +
+    `Credit Issues: ${formData.sema === "yes-sema" ? "Yes" : "No"}%0A` +
+    `Total Monthly Obligations: ${formData.totalObl} SAR%0A` +
+    `${formData.message !== "" ? `Message: ${formData.message}` : ""}`
     :
     lo === "ur" ? 
-    `رسالة جديدة من موقع سهل كارز:%0A%0A` +
-    `الاسم: ${formData.name}%0A` +
-    `الجوال: ${formData.phone}%0A` +
-    `البريد الإلكتروني: ${formData.email}%0A` +
-    `تاريخ الميلاد: ${formData.dateOfBirth}%0A` +
-    `الجنس: ${formData.gender}%0A` +
-    `ماركة السيارة: ${formData.carBrand}%0A` +
-    `موديل السيارة: ${formData.carModel}%0A` +
-    `العمل: ${formData.work}%0A` +
-    `التأمين: ${formData.insurence}%0A` +
-    `مصدر الراتب: ${formData.salarySrc}%0A` +
-    `الراتب: ${formData.salary}%0A` +
-    `الالتزامات: ${formData.obligations}%0A` +
-    `السمة: ${formData.sema}%0A` +
-    `إجمالي الالتزامات الشهرية: ${formData.totalObl} ريال%0A` +
-    `الرسالة: ${formData.message}` : null;
+    `سہل کارز ویب سائٹ سے نیا بکنگ:%0A%0A` +
+    `نام: ${formData.name}%0A` +
+    `فون: ${formData.phone}%0A` +
+    `ای میل: ${formData.email}%0A` +
+    `تاریخ پیدائش: ${formData.dateOfBirth}%0A` +
+    `جنس: ${formData.gender === "male" ? "مرد" : "عورت"}%0A` +
+    `${selectedBrand !== "other" ? `گاڑی کی برانڈ: ${formData.carBrand} %0A` : ""}` +
+    `${selectedBrand !== "other" ? `گاڑی کا ماڈل: ${formData.carModel} %0A` : ""}` +
+    `${selectedBrand === "other" ? `گاڑی کا ماڈل: ${formData.otherCarBrand} %0A` : ""}` +
+    `کام کی جگہ: ${formData.work === "gov-work" ? "سرکاری" : formData.work === "private-work" ? "پرائیویٹ" : "نہ سرکاری نہ پرائیویٹ"}%0A` +
+    `سوشل انشورنس: ${formData.insurence === "yes-insurence" ? "رجسٹرڈ" : "غیر رجسٹرڈ"}%0A` +
+    `تنخواہ کا ذریعہ: ${formData.salarySrc}%0A` +
+    `تنخواہ: ${formData.salary} ریال%0A` +
+    `قرضے: ${formData.obligations === "state-obl" ? "گھر کی فنانسنگ" : formData.obligations === "personal-obl" ? "ذاتی قرضہ" : "دیگر"}%0A` +
+    `سمہ میں تعطل: ${formData.sema === "yes-sema" ? "ہاں" : "نہیں"}%0A` +
+    `ماہانہ کل قرضے: ${formData.totalObl} ریال%0A` +
+    `${formData.message !== "" ? `پیغام: ${formData.message}` : ""}`
+    : 
+    null;
     
     // Replace with your client's WhatsApp number (include country code, remove +, 0, or spaces)
     const phoneNumber = '+201024994652'; 
