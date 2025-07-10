@@ -83,14 +83,29 @@ const Cars = ({
                                                 }
                                             </span>
                                             <div className={styles.imgOverlay}></div>
-                                            <Image src={car.src} alt='test'></Image>
+                                            <Image src={car.src} alt={car.name}></Image>
                                         </div>
-                                        <div className={styles.text}>
-                                            <h3>
-                                                {
-                                                    car.name
-                                                }
-                                            </h3>
+                                        <div className={styles.details}>
+                                            <div className={styles.carLogo}>
+                                                <Image src={car.carLogo} alt={`${car.name} logo`}></Image>
+                                            </div>    
+                                            <div className={styles.text}>
+                                                <h3>
+                                                    {
+                                                        car.name
+                                                    }
+                                                </h3>
+                                                <p>
+                                                    {
+                                                        car.carYear
+                                                    }
+                                                </p>
+                                                <span>
+                                                    {
+                                                        car.price + ` ${t("currency")}`
+                                                    }
+                                                </span>
+                                            </div>
                                         </div>
                                     </a>
                                 </SwiperSlide>

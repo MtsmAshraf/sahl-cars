@@ -11,7 +11,45 @@ import { Footer } from "@/component/Footer/Footer";
 
 export const metadata: Metadata = {
   title: "Sahl Cars - سهل كارز",
-  description: "Financing your car's just got easier",
+  description: "تمويل السيارات بأفضل الشروط | احصل على تمويل سيارات تويوتا، نيسان، هيونداي بأقل الأسعار وأسهل الإجراءات في السعودية. موافقات سريعة، أقساط ميسرة، وبدون عمولة.",
+  keywords: [
+    "تمويل سيارات",
+    "تقسيط سيارات",
+    "شركة تمويل",
+    "تمويل سيارة جديدة",
+    "تمويل سيارة مستعملة",
+    "أفضل شركة تمويل",
+    "شروط تمويل السيارات",
+    "حاسبة التمويل",
+    "تمويل بدون تحويل راتب",
+    "تمويل سريع",
+    "Toyota financing",
+    "Nissan financing",
+    "Hyundai financing",
+    "car loan Saudi Arabia"
+  ],
+  // openGraph: {
+  //   title: "Sahl Cars - تمويل السيارات في السعودية",
+  //   description: "حلول تمويل مرنة لجميع أنواع السيارات الجديدة والمستعملة في المملكة العربية السعودية",
+  //   url: "https://www.sahlcars.com",
+  //   siteName: "Sahl Cars",
+  //   images: [
+  //     {
+  //       url: "https://www.sahlcars.com/og-image.jpg",
+  //       width: 1200,
+  //       height: 630,
+  //       alt: "Sahl Cars تمويل السيارات",
+  //     },
+  //   ],
+  //   locale: "ar_SA",
+  //   type: "website",
+  // },
+  // twitter: {
+  //   card: "summary_large_image",
+  //   title: "Sahl Cars - تمويل السيارات في السعودية",
+  //   description: "تمويل سريع وسهل للسيارات في المملكة العربية السعودية",
+  //   images: ["https://www.sahlcars.com/twitter-card.jpg"],
+  // },
   icons: icon.src,
 };
 

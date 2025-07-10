@@ -33,7 +33,8 @@
     },
     "Cars": {
       "heading": "Some Models",
-      "imgLink": "Contact to Order"
+      "imgLink": "Contact to Order",
+      "currency": "SAR"
     },
     "Steps": {
       "heading": "Application Steps",

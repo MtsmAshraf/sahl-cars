@@ -17,6 +17,7 @@
     border: 2px solid #ccc;
     transition: var(--main-transition);
     overflow: hidden;
+    height: 340px;
 }
 .cars.ar .slide{
     direction: rtl;
@@ -62,6 +63,8 @@
     border-radius: 6px;
     background-image: var(--main-gradient);
     z-index: 2;
+    text-wrap: nowrap;
+    text-align: center;
 }
 .cars .img img{
     object-fit: contain;
@@ -98,13 +101,61 @@
     }
     
 }
-.cars .slide .text{
+.cars .slide .details{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: space-between; */
     padding: 20px;
 }
+.cars.ar .slide .details{
+    flex-direction: row-reverse;
+}
+.cars .slide .details .carLogo{
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.cars .slide .details .carLogo img{
+}
+.cars .slide .text{
+    /* text-align: center; */
+    padding-left: 10px;
+    border-left: 1px solid var(--text-color);
+    flex: 1;
+}
+.cars.ar .slide .text{
+    text-align: left;
+    /* padding-left: unset;
+    padding-right: 10px;
+    border-left: none;
+    border-right: 1px solid var(--text-color); */
+}
+
 .cars .slide h3{
-    font-size: 26px;
+    font-size: 24px;
     font-weight: bold;
-    text-align: center;
+}
+.cars .slide p{
+    background-color: var(--text-color);
+    color: #fff;
+    width: fit-content;
+    padding: 2px 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+.cars.ar .slide .text p{
+    margin-left: 0px;
+    margin-right: auto;
+}
+.cars .slide .text span{
+    color: #fff;
+    background-image: var(--main-gradient);
+    padding: 5px 20px;
+    border-radius: 6px;
 }
 .cars .swiper button{
     position: absolute;
