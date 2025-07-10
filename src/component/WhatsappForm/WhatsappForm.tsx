@@ -22,13 +22,14 @@ const [formData, setFormData] = useState({
     gender: '',
     carBrand: '',
     carModel: '',
+    otherCarBrand: "",
     work: '',
     insurence: '',
     salarySrc: '',
     salary: '',
     obligations: '',
     sema: '',
-    totalObligationPerMonth: '',
+    totalObl: '',
     message: ''
 });
 
@@ -46,23 +47,25 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     // Format the message
     const whatsappMessage = 
     lo === "ar" ? 
-    `رسالة جديدة من موقع سهل كارز:%0A%0A` +
+    `حجز جديد من موقع سهل كارز:%0A%0A` +
     `الاسم: ${formData.name}%0A` +
     `الجوال: ${formData.phone}%0A` +
     `البريد الإلكتروني: ${formData.email}%0A` +
     `تاريخ الميلاد: ${formData.dateOfBirth}%0A` +
-    `الجنس: ${formData.gender}%0A` +
-    `ماركة السيارة: ${formData.carBrand}%0A` +
-    `موديل السيارة: ${formData.carModel}%0A` +
-    `العمل: ${formData.work}%0A` +
-    `التأمين: ${formData.insurence}%0A` +
+    `الجنس: ${formData.gender === "male" ? "ذكر" : "أنثى"}%0A` +
+    `${selectedBrand !== "other" ? `ماركة السيارة: ${formData.carBrand} %0A` : ""} `+
+    `${selectedBrand !== "other" ? `موديل السيارة: ${formData.carModel} %0A` : ""} `+
+    `${selectedBrand === "other" ? `موديل السيارة: ${formData.otherCarBrand} %0A` : ""} `+
+    `جهة العمل: ${formData.work === "gov-work" ?  "حكومي" : formData.work === "private-work" ? "خاص" : "ليس حكوميا وليس خاصا"}%0A` +
+    `التأمينات الإجتماعبة: ${formData.insurence === "yes-insurence" ? "مسجل" : "غير مسجل"}%0A` +
     `مصدر الراتب: ${formData.salarySrc}%0A` +
-    `الراتب: ${formData.salary}%0A` +
-    `الالتزامات: ${formData.obligations}%0A` +
-    `السمة: ${formData.sema}%0A` +
-    `إجمالي الالتزامات الشهرية: ${formData.totalObligationPerMonth} ريال%0A` +
+    `الراتب: ${formData.salary} ريال%0A` +
+    `الالتزامات: ${formData.obligations === "state-obl" ? "تمويل عقاري" : formData.obligations === "personal-obl" ? "تمويل شخصي" : "أخرى"}%0A` +
+    `التعثر في سمة: ${formData.sema === "yes-sema" ? "يوجد" : "لا يوجد"}%0A` +
+    `إجمالي الالتزامات الشهرية: ${formData.totalObl} ريال%0A` +
     `الرسالة: ${formData.message}`
     :
+    lo === "en" ?
     `New Contact Message from Sahl Cars Website:%0A%0A` +
     `Name: ${formData.name}%0A` +
     `Phone: ${formData.phone}%0A` +
@@ -77,8 +80,26 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     `Salary: ${formData.salary}%0A` +
     `Obligations: ${formData.obligations}%0A` +
     `Sema: ${formData.sema}%0A` +
-    `Total Obligation Per Month: ${formData.totalObligationPerMonth} SAR %0A` +
-    `Message: ${formData.message}`;
+    `Total Obligation Per Month: ${formData.totalObl} SAR %0A` +
+    `Message: ${formData.message}`
+    :
+    lo === "ur" ? 
+    `رسالة جديدة من موقع سهل كارز:%0A%0A` +
+    `الاسم: ${formData.name}%0A` +
+    `الجوال: ${formData.phone}%0A` +
+    `البريد الإلكتروني: ${formData.email}%0A` +
+    `تاريخ الميلاد: ${formData.dateOfBirth}%0A` +
+    `الجنس: ${formData.gender}%0A` +
+    `ماركة السيارة: ${formData.carBrand}%0A` +
+    `موديل السيارة: ${formData.carModel}%0A` +
+    `العمل: ${formData.work}%0A` +
+    `التأمين: ${formData.insurence}%0A` +
+    `مصدر الراتب: ${formData.salarySrc}%0A` +
+    `الراتب: ${formData.salary}%0A` +
+    `الالتزامات: ${formData.obligations}%0A` +
+    `السمة: ${formData.sema}%0A` +
+    `إجمالي الالتزامات الشهرية: ${formData.totalObl} ريال%0A` +
+    `الرسالة: ${formData.message}` : null;
     
     // Replace with your client's WhatsApp number (include country code, remove +, 0, or spaces)
     const phoneNumber = '+201024994652'; 
@@ -245,7 +266,7 @@ return (
                                     brand.value.toLowerCase() === selectedBrand ? 
                                     brand.models?.map((model: string, index: number) => {
                                         return(
-                                            <option key={index} value={brand.value}>
+                                            <option key={index} value={model}>
                                                 {model}
                                             </option>
                                         )
@@ -259,10 +280,11 @@ return (
                         }
                     </select> : 
                     selectedBrand === "other" ?
-                    <input name='carBrand' onChange={handleChange} type="text" placeholder={t("carModel.customPlaceholder")} />
+                    <input name="otherCarBrand" onChange={handleChange} type="text" placeholder={t("carModel.customPlaceholder")} />
                     :
                     selectedBrand === "" ?
-                    <input value={""} name='other-brand' type="text" placeholder={t("carModel.disabledPlaceholder")} disabled style={{ backgroundColor: "#ccc" }}/> 
+                    <p style={{ border: "1px solid var(--text-color)", padding: "2px 20px", borderRadius: "10px", color: "#888", backgroundColor: "#eee" }}>اختر نوع السيارة أولا</p>
+                    // <input name='other-brand' type="text" placeholder={t("carModel.disabledPlaceholder")} disabled style={{ backgroundColor: "#ccc" }}/> 
                     :
                     null
                 }
@@ -341,23 +363,23 @@ return (
                             t("salarySrc.placeholder")
                         }
                     </option>
-                    <option value="alrajhi">البنك الأهلي التجاري</option>
-                    <option value="samba">سامبا</option>
-                    <option value="riyad">بنك الرياض</option>
-                    <option value="albilad">البلاد</option>
-                    <option value="alinma">الإنماء</option>
-                    <option value="alfransi">البنك العربي الفرنسي</option>
-                    <option value="saab">بنك السعودية البريطاني (ساب)</option>
-                    <option value="aljazeera">بنك الجزيرة</option>
-                    <option value="saudi_invest">بنك الاستثمار السعودي</option>
-                    <option value="bsf">البنك السعودي الفرنسي</option>
-                    <option value="anb">البنك العربي الوطني</option>
-                    <option value="mussafah">مصرف الراجحي</option>
-                    <option value="alinsaat">بنك الإنشاء والتعمير</option>
-                    <option value="saudi_hollandi">بنك السعودية الهولندي</option>
-                    <option value="gulf">بنك الخليج الدولي</option>
-                    <option value="emirates_nbd">بنك الإمارات دبي الوطني</option>
-                    <option value="other">بنك آخر</option>
+                    <option value="alrajhi">البنك الأهلي التجاري / Al Rajhi Bank</option>
+                    <option value="samba">سامبا / Samba</option>
+                    <option value="riyad">بنك الرياض / Riyad Bank</option>
+                    <option value="albilad">البلاد / Al Bilad Bank</option>
+                    <option value="alinma">الإنماء / Alinma Bank</option>
+                    <option value="alfransi">البنك العربي الفرنسي / Arab French Bank</option>
+                    <option value="saab">بنك السعودية البريطاني (ساب) / Saudi British Bank (SABB)</option>
+                    <option value="aljazeera">بنك الجزيرة / Al Jazeera Bank</option>
+                    <option value="saudi_invest">بنك الاستثمار السعودي / Saudi Investment Bank</option>
+                    <option value="bsf">البنك السعودي الفرنسي / Banque Saudi Fransi</option>
+                    <option value="anb">البنك العربي الوطني / Arab National Bank</option>
+                    <option value="mussafah">مصرف الراجحي / Al Rajhi Bank</option>
+                    <option value="alinsaat">بنك الإنشاء والتعمير / Construction Bank</option>
+                    <option value="saudi_hollandi">بنك السعودية الهولندي / Saudi Hollandi Bank</option>
+                    <option value="gulf">بنك الخليج الدولي / Gulf International Bank</option>
+                    <option value="emirates_nbd">بنك الإمارات دبي الوطني / Emirates NBD</option>
+                    <option value="other">بنك آخر / Other Bank</option>
                 </select>
 
             </div>
