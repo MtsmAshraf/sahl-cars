@@ -14,10 +14,10 @@ const Loader = ({
     useEffect(() => {
         setTimeout(() => {
             setLoaded(true)
-        }, 500);
+        }, 300);
         setTimeout(() => {
             setHide(true)
-        }, 700);
+        }, 500);
     },[])
     const classNames = [
         "loading",
