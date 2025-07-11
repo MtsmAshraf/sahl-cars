@@ -147,6 +147,7 @@
           "label": "Additional Message (Optional)",
           "placeholder": ""
         },
+        "requiredMsg": "Please fill all required fields",
         "submit": "Send via WhatsApp",
         "whatsappLink": {
           "p": "Want to chat via WhatsApp?",

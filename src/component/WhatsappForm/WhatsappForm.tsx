@@ -535,7 +535,9 @@ return (
         {
             allFilled === false && 
             <p style={{ color: "red", textAlign: "center", fontWeight: 'bold' }}>
-                تأكد من ملء جميع البيانات المطلوبة
+                {
+                    t("requiredMsg")
+                }
             </p>
         }
         <button
