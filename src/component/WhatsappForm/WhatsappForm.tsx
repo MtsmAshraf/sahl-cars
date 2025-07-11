@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl';
 import carBrands, { CarBrand } from './carBrands';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { Bank, banks } from './banks';
 export default function WhatsAppForm({
   lo
 } : {
@@ -58,7 +59,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     `${selectedBrand === "other" ? `موديل السيارة: ${formData.otherCarBrand} %0A` : ""} `+
     `جهة العمل: ${formData.work === "gov-work" ?  "حكومي" : formData.work === "private-work" ? "خاص" : "ليس حكوميا وليس خاصا"}%0A` +
     `التأمينات الإجتماعبة: ${formData.insurence === "yes-insurence" ? "مسجل" : "غير مسجل"}%0A` +
-    `مصدر الراتب: ${formData.salarySrc}%0A` +
+    `مصدر الراتب: ${formData.salarySrc} bank%0A` +
     `الراتب: ${formData.salary} ريال%0A` +
     `الالتزامات: ${formData.obligations === "state-obl" ? "تمويل عقاري" : formData.obligations === "personal-obl" ? "تمويل شخصي" : "أخرى"}%0A` +
     `التعثر في سمة: ${formData.sema === "yes-sema" ? "يوجد" : "لا يوجد"}%0A` +
@@ -77,7 +78,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     `${selectedBrand === "other" ? `Car Model: ${formData.otherCarBrand} %0A` : ""}` +
     `Employer: ${formData.work === "gov-work" ? "Government" : formData.work === "private-work" ? "Private" : "Neither"}%0A` +
     `Social Insurance: ${formData.insurence === "yes-insurence" ? "Registered" : "Not Registered"}%0A` +
-    `Salary Source: ${formData.salarySrc}%0A` +
+    `Salary Source: ${formData.salarySrc} bank%0A` +
     `Salary: ${formData.salary} SAR%0A` +
     `Obligations: ${formData.obligations === "state-obl" ? "Mortgage" : formData.obligations === "personal-obl" ? "Personal Loan" : "Other"}%0A` +
     `Credit Issues: ${formData.sema === "yes-sema" ? "Yes" : "No"}%0A` +
@@ -96,7 +97,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     `${selectedBrand === "other" ? `گاڑی کا ماڈل: ${formData.otherCarBrand} %0A` : ""}` +
     `کام کی جگہ: ${formData.work === "gov-work" ? "سرکاری" : formData.work === "private-work" ? "پرائیویٹ" : "نہ سرکاری نہ پرائیویٹ"}%0A` +
     `سوشل انشورنس: ${formData.insurence === "yes-insurence" ? "رجسٹرڈ" : "غیر رجسٹرڈ"}%0A` +
-    `تنخواہ کا ذریعہ: ${formData.salarySrc}%0A` +
+    `تنخواہ کا ذریعہ: ${formData.salarySrc} bank%0A` +
     `تنخواہ: ${formData.salary} ریال%0A` +
     `قرضے: ${formData.obligations === "state-obl" ? "گھر کی فنانسنگ" : formData.obligations === "personal-obl" ? "ذاتی قرضہ" : "دیگر"}%0A` +
     `سمہ میں تعطل: ${formData.sema === "yes-sema" ? "ہاں" : "نہیں"}%0A` +
@@ -367,23 +368,15 @@ return (
                             t("salarySrc.placeholder")
                         }
                     </option>
-                    <option value="alrajhi">البنك الأهلي التجاري / Al Rajhi Bank</option>
-                    <option value="samba">سامبا / Samba</option>
-                    <option value="riyad">بنك الرياض / Riyad Bank</option>
-                    <option value="albilad">البلاد / Al Bilad Bank</option>
-                    <option value="alinma">الإنماء / Alinma Bank</option>
-                    <option value="alfransi">البنك العربي الفرنسي / Arab French Bank</option>
-                    <option value="saab">بنك السعودية البريطاني (ساب) / Saudi British Bank (SABB)</option>
-                    <option value="aljazeera">بنك الجزيرة / Al Jazeera Bank</option>
-                    <option value="saudi_invest">بنك الاستثمار السعودي / Saudi Investment Bank</option>
-                    <option value="bsf">البنك السعودي الفرنسي / Banque Saudi Fransi</option>
-                    <option value="anb">البنك العربي الوطني / Arab National Bank</option>
-                    <option value="mussafah">مصرف الراجحي / Al Rajhi Bank</option>
-                    <option value="alinsaat">بنك الإنشاء والتعمير / Construction Bank</option>
-                    <option value="saudi_hollandi">بنك السعودية الهولندي / Saudi Hollandi Bank</option>
-                    <option value="gulf">بنك الخليج الدولي / Gulf International Bank</option>
-                    <option value="emirates_nbd">بنك الإمارات دبي الوطني / Emirates NBD</option>
-                    <option value="other">بنك آخر / Other Bank</option>
+                    {
+                        banks.map((bank: Bank) => {
+                            return(
+                                <option value={bank.value} key={bank.id}>
+                                    {bank.name}
+                                </option>
+                            )
+                        })
+                    }
                 </select>
 
             </div>
