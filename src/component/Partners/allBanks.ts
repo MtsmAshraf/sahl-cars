@@ -16,6 +16,9 @@ import bank12 from "../../../public/images/logos/imgi_8_400_63a7e62d9e4de.png";
 import bank13 from "../../../public/images/logos/imgi_9_400_filter_nobg_63a7e64c29e84.png";
 import bank14 from "../../../public/images/logos/imgi_10_400_63a7e66de4d3d.png";
 import bank15 from "../../../public/images/logos/imgi_53_بنك-التعمير-والإسكان.png";
+import bank16 from "../../../public/images/logos/imgi_3_The-Abdul-Latif-Jameel.png";
+import bank17 from "../../../public/images/logos/imgi_21_شركة-راية-للتمويل.png";
+import bank18 from "../../../public/images/logos/imgi_2_13-12-24-434733670.webp";
 
 export type Bank = {
     id: string;
@@ -86,6 +89,18 @@ const allBanks : Bank[] = [
     { 
         id: "15", 
         src: bank15
+    } ,
+    { 
+        id: "16", 
+        src: bank16
+    } ,
+    { 
+        id: "17", 
+        src: bank17
+    } ,
+    { 
+        id: "18", 
+        src: bank18
     } 
 ]
 
