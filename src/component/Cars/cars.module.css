@@ -66,6 +66,20 @@
     text-wrap: nowrap;
     text-align: center;
 }
+.cars .slide:hover .img .spanLink{
+    gap: 15px;
+    transform: translate(-50%,-50%);
+}
+@media (max-width: 992px) {
+    .cars .slide .img .imgOverlay{
+        opacity: 0.5;
+    } 
+    .cars .slide .img .spanLink{
+        /* top: 100%; */
+        transform: translate(-50%,50%);
+    }
+    
+}
 .cars .img img{
     object-fit: contain;
     height: 100%;
@@ -87,19 +101,6 @@
 .cars .slide:hover{
     border: 2px solid var(--main-color);
     /* border-color: var(--main-color); */
-}
-.cars .slide:hover .img .spanLink{
-    gap: 15px;
-    transform: translate(-50%,-50%);
-}
-@media (max-width: 992px) {
-    .cars .slide .img .imgOverlay{
-        opacity: 0.7;
-    } 
-    .cars .slide .img .spanLink{
-        transform: translate(-50%,-50%);
-    }
-    
 }
 .cars .slide .details{
     display: flex;

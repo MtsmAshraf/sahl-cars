@@ -48,8 +48,6 @@ const Cars = ({
                         clickable: true,
                         el: `.brandsPagination`
                     }}
-                    onSlideChange={() => console.log('slide change')}
-                    onSwiper={(swiper) => console.log(swiper)}
                     navigation={{
                         nextEl: '.cars-swiper-button-next',
                         prevEl: '.cars-swiper-button-prev'
