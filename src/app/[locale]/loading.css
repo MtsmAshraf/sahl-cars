@@ -1,0 +1,270 @@
+  
+.loading {
+  position: fixed;
+  left: 0;
+  top: 0%;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-color);
+  z-index: 200;
+  isolation: isolate;
+  overflow: hidden;
+  transition: var(--main-transition);
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+}
+.loader > div > :last-child h3{ /*logo*/
+  font-size: 50px;
+}
+.loading.loaded{
+  height: 0;
+}
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+.loader {
+  margin: 50px;
+}
+  
+  /**
+    * push-pop
+    * lil push pop effect, push one side out and one side in
+    * @author jh3y
+  */
+  :root{
+      --duration: .85;
+  }
+  .push-pop {
+    height: 100px;
+    width: 100px;
+    position: relative;
+    overflow: hidden;
+  }
+    .push-pop > div:nth-of-type(1) {
+      height: 20px;
+      width: 20px;
+      position: absolute;
+      animation: push-pop-flip calc(var(--duration) * 1s) infinite alternate ease-in-out;
+      /* transform: translate(0, -100%); */
+      top: 100%;
+      left: 0;
+      background-color: #fff;
+      border-radius: 50%;
+    }
+  
+      .push-pop::after {
+        animation: push-pop-flip calc(var(--duration) * 1s) infinite alternate ease-in-out;
+        /* background: #fff; */
+        content: '';
+        height: 100%;
+        position: absolute;
+        width: 100%;
+      }
+  
+    .push-pop > div:nth-of-type(2) {
+      background: #fff;
+      height: 30px;
+      left: 50%;
+      position: absolute;
+      top: 100%;
+      transform: translate(-50%, -100%);
+      width: 20px;
+      border-radius: 20px 20px 0px 0px;
+    }
+  
+    .push-pop::after,
+    .push-pop:before {
+      animation: push-pop-pushed calc(var(--duration) * 1s) alternate infinite ease;
+      bottom: 0;
+      content: '';
+      height: 40px;
+      position: absolute;
+      width: 20px;
+      border-radius: 20px 20px 0px 0px;
+      background-color: var(--sec-color);
+    }
+  
+    .push-pop::before {
+      animation: push-pop-pushed calc(var(--duration) * 1s) alternate-reverse infinite ease;
+      left: 0;
+      background-color: var(--main-color);
+    }
+  
+    .push-pop::after {
+      right: 0;
+    }
+  
+@keyframes push-pop-pushed {
+    0%, 72.5% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(0, 100%);
+    }
+  }
+  
+  @keyframes push-pop-flip {
+    0% {
+      transform: translate(-10px, 0) rotate(0deg);
+    }
+    50% {
+      transform: translate(40px, -100px) rotate(90deg);
+    }
+    100% {
+      transform: translate(90px, 0) rotate(180deg);
+    }
+  }
+  
+  @keyframes push-pop-slide {
+    to {
+      transform: translate(0, -100%) translate(80px, 0);
+    }
+  }
+  /**
+    * push-out
+    * lil push out effect, push one side out and one side in
+    * @author jh3y
+  */
+  
+  .push-out {
+    --duration: .85;
+    height: 100px;
+    width: 100px;
+    position: relative;
+    overflow: hidden;
+  }
+    .push-out > div:nth-of-type(1) {
+      height: 20px;
+      width: 20px;
+      position: absolute;
+      animation: push-out-slide calc(var(--duration) * 1s) infinite alternate ease-in-out;
+      transform: translate(0, -100%);
+      top: 100%;
+      left: 0;
+    }
+    .push-out::after {
+        animation: push-out-flip calc(var(--duration) * 1s) infinite alternate ease-in-out;
+        background: #fff;
+        content: '';
+        height: 100%;
+        position: absolute;
+        width: 100%;
+      }
+    
+  
+    .push-out > div:nth-of-type(2) {
+      background: #fff;
+      height: 30px;
+      left: 50%;
+      position: absolute;
+      top: 100%;
+      transform: translate(-50%, -100%);
+      width: 20px;
+    }
+  
+    .push-out::after,
+    .push-out::before {
+      animation-timing-function: ease;
+      animation-iteration-count: infinite;
+      animation-duration: calc(var(--duration) * 4s);
+      background: #fff;
+      bottom: 0;
+      content: '';
+      height: 40px;
+      position: absolute;
+      width: 20px;
+    }
+  
+    .push-out::after {
+      animation-name: push-out-pushed-1;
+      right: 0;
+    }
+  
+    .push-out::before {
+      animation-name: push-out-pushed-2;
+      left: 0;
+    }
+  
+  
+  @keyframes push-out-pushed-1 {
+    0%, 18.125%, 50%, 68.125%, 100% {
+      transform: translate(0, 0);
+    }
+    25%, 43.125%, 75%, 93.125% {
+      transform: translate(0, 100%);
+    }
+  
+  }
+  
+  @keyframes push-out-pushed-2 {
+    0%, 18.125%, 50%, 68.125%, 100% {
+      transform: translate(0, 100%);
+    }
+    25%, 43.125%, 75%, 93.125% {
+      transform: translate(0, 0);
+    }
+  
+  }
+  
+  @keyframes push-out-flip {
+    0% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    50% {
+      transform: translate(0, -80px) rotate(90deg);
+    }
+    100% {
+      transform: translate(0, 0) rotate(180deg);
+    }
+  }
+  
+  @keyframes push-out-slide {
+    to {
+      transform: translate(0, -100%) translate(80px, 0);
+    }
+  }
+  
+  /* new for al-mahdy */
+  .loader{
+    position: relative;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #ar{
+    direction: rtl;
+    font-family: "Tajaeal", sans-serif;
+  }
+  .loader div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .loader div img{
+    height: 100px;
+    width: 100px;
+    object-fit: contain;
+    animation: hemlet 2s linear 0s infinite alternate;
+  }
+  .loader > img{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%) scale(2);
+    z-index: -1;
+  }
+  @keyframes hemlet {
+    0%{
+      transform: translateY(-0px) scale(1);
+    }
+    100%{
+      transform: translateY(-10px) scale(1);
+    }
+  }
