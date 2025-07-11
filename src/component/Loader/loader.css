@@ -296,6 +296,16 @@
       /* background-color: red; */
     }
   }
+  @media (max-width: 767px) {
+    .loader div img{
+      height: 130px;
+      width: 130px;
+    }
+    .loading ul li{
+      width: 15px;
+      height: 15px;
+    }
+  }
   /* @keyframes logo {
     0%{
       transform: translateY(-0px) scale(1);
