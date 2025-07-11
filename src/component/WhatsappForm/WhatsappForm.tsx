@@ -23,7 +23,7 @@ const [formData, setFormData] = useState({
     gender: '',
     carBrand: '',
     carModel: '',
-    otherCarBrand: "",
+    otherCarBrand: '',
     work: '',
     insurence: '',
     salarySrc: '',
@@ -42,7 +42,31 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElemen
     }));
 };
 
+const [allFilled, setAllfilled] = useState(false)
+
 const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    if(
+        !formData.name ||
+        !formData.phone ||
+        !formData.email ||
+        !formData.dateOfBirth ||
+        !formData.gender ||
+        !formData.carBrand ||
+        !formData.carModel ||
+        !formData.otherCarBrand ||
+        !formData.work ||
+        !formData.insurence ||
+        !formData.salarySrc ||
+        !formData.salary ||
+        !formData.obligations ||
+        !formData.sema ||
+        !formData.totalObl
+    ){
+        setAllfilled(true)
+    }else(
+        setAllfilled(false)
+    )
+
     e.preventDefault();
     
     // Format the message
@@ -108,7 +132,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     
     // Replace with your client's WhatsApp number (include country code, remove +, 0, or spaces)
     const phoneNumber = '+201024994652'; 
-    
+
     // Open WhatsApp with the pre-filled message
     window.open(`https://wa.me/${phoneNumber}?text=${whatsappMessage}`, '_blank');
 };
@@ -285,7 +309,7 @@ return (
                         }
                     </select> : 
                     selectedBrand === "other" ?
-                    <input name="otherCarBrand" onChange={handleChange} type="text" placeholder={t("carModel.customPlaceholder")} />
+                    <input name="otherCarBrand" onChange={handleChange} type="text" placeholder={t("carModel.customPlaceholder")} required/>
                     :
                     selectedBrand === "" ?
                     <p style={{ border: "1px solid var(--text-color)", padding: "2px 20px", borderRadius: "10px", color: "#888", backgroundColor: "#eee" }}>اختر نوع السيارة أولا</p>
@@ -508,6 +532,12 @@ return (
             // rows="4"
             ></textarea>
         </div>
+        {
+            allFilled === false && 
+            <p style={{ color: "red", textAlign: "center", fontWeight: 'bold' }}>
+                تأكد من ملء جميع البيانات المطلوبة
+            </p>
+        }
         <button
             type="submit"
         >
