@@ -131,7 +131,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     null;
     
     // Replace with your client's WhatsApp number (include country code, remove +, 0, or spaces)
-    const phoneNumber = '+201024994652'; 
+    const phoneNumber = '+966505638988'; 
 
     // Open WhatsApp with the pre-filled message
     window.open(`https://wa.me/${phoneNumber}?text=${whatsappMessage}`, '_blank');
@@ -467,7 +467,7 @@ return (
                     <input
                         type="text"
                         id="other-obligations"
-                        name="other-obligations"
+                        name="obligations"
                         placeholder={`${t("otherObligations.placeholder")}`}
                         onChange={handleChange}
                         required
