@@ -7,6 +7,7 @@ import Header from "@/component/Header/Header";
 // import icon from "../../../public/images/logo.png"
 import icon from "./favicon.ico"
 import { Footer } from "@/component/Footer/Footer";
+import Script from "next/script";
 
 
 export const metadata: Metadata = {
@@ -69,6 +70,24 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
+      <head>
+        {/* Google Analytics */}
+        <Script
+          strategy="afterInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=G-64NB5QJVHK`}
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+        >
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-64NB5QJVHK');
+          `}
+        </Script>
+      </head>
       <body>
         <NextIntlClientProvider>
           <Header lo={locale}></Header>
