@@ -19,7 +19,6 @@ export default async function Home({
   // const t = await getTranslations('HomePage');
   return (
     <main>
-      <Loader lo={locale} />
       <Hero lo={locale} />
       <Features lo={locale} />
       <Cars lo={locale} />

@@ -4,11 +4,7 @@ import "./loader.css"
 import Image from 'next/image'
 // import Image from 'next/image'
 import logo from "../../../public/images/logo.png"
-const Loader = ({
-    lo
-} : {
-    lo: string
-}) => {
+const Loader = () => {
     const [loaded, setLoaded] = useState(false)
     const [hide, setHide] = useState(false)
     useEffect(() => {
