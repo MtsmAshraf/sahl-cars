@@ -85,7 +85,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     `التأمينات الإجتماعبة: ${formData.insurence === "yes-insurence" ? "مسجل" : "غير مسجل"}%0A` +
     `مصدر الراتب: ${formData.salarySrc} bank%0A` +
     `الراتب: ${formData.salary} ريال%0A` +
-    `الالتزامات: ${formData.obligations === "state-obl" ? "تمويل عقاري" : formData.obligations === "personal-obl" ? "تمويل شخصي" : "أخرى"}%0A` +
+    `الالتزامات: ${formData.obligations === "state-obl" ? "تمويل عقاري" : formData.obligations === "personal-obl" ? "تمويل شخصي" : formData.obligations}%0A` +
     `التعثر في سمة: ${formData.sema === "yes-sema" ? "يوجد" : "لا يوجد"}%0A` +
     `إجمالي الالتزامات الشهرية: ${formData.totalObl} ريال%0A` +
     `${formData.message !== "" ? `الرسالة: ${formData.message}` : ""}`
@@ -104,7 +104,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     `Social Insurance: ${formData.insurence === "yes-insurence" ? "Registered" : "Not Registered"}%0A` +
     `Salary Source: ${formData.salarySrc} bank%0A` +
     `Salary: ${formData.salary} SAR%0A` +
-    `Obligations: ${formData.obligations === "state-obl" ? "Mortgage" : formData.obligations === "personal-obl" ? "Personal Loan" : "Other"}%0A` +
+    `Obligations: ${formData.obligations === "state-obl" ? "Mortgage" : formData.obligations === "personal-obl" ? "Personal Loan" : formData.obligations}%0A` +
     `Credit Issues: ${formData.sema === "yes-sema" ? "Yes" : "No"}%0A` +
     `Total Monthly Obligations: ${formData.totalObl} SAR%0A` +
     `${formData.message !== "" ? `Message: ${formData.message}` : ""}`
@@ -123,7 +123,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     `سوشل انشورنس: ${formData.insurence === "yes-insurence" ? "رجسٹرڈ" : "غیر رجسٹرڈ"}%0A` +
     `تنخواہ کا ذریعہ: ${formData.salarySrc} bank%0A` +
     `تنخواہ: ${formData.salary} ریال%0A` +
-    `قرضے: ${formData.obligations === "state-obl" ? "گھر کی فنانسنگ" : formData.obligations === "personal-obl" ? "ذاتی قرضہ" : "دیگر"}%0A` +
+    `قرضے: ${formData.obligations === "state-obl" ? "گھر کی فنانسنگ" : formData.obligations === "personal-obl" ? "ذاتی قرضہ" : formData.obligations}%0A` +
     `سمہ میں تعطل: ${formData.sema === "yes-sema" ? "ہاں" : "نہیں"}%0A` +
     `ماہانہ کل قرضے: ${formData.totalObl} ریال%0A` +
     `${formData.message !== "" ? `پیغام: ${formData.message}` : ""}`
