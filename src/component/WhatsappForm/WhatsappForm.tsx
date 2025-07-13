@@ -139,17 +139,17 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     const phoneNumber = '+966505638988'; 
 
     // Open WhatsApp with the pre-filled message
-    // console.log(whatsappMessage)
-    window.open(`https://wa.me/${phoneNumber}?text=${whatsappMessage}`, '_blank');
+    console.log(whatsappMessage)
+    // window.open(`https://wa.me/${phoneNumber}?text=${whatsappMessage}`, '_blank');
 };
 
 const [selectedBrand, setSelectedBrand] = useState("")
-const [selectedObl, setSelectedObl] = useState("")
+// const [selectedObl, setSelectedObl] = useState("")
 const [selectedStateObl, setSelectedStateObl] = useState(false)
 const [selectedPersonalObl, setSelectedPersonalObl] = useState(false)
 const [selectedOtherObl, setSelectedOtherObl] = useState(false)
 
-console.log(selectedObl)
+// console.log(selectedObl)
 return (
     <form className={lo !== "en" ? styles.whatsappForm + " " + styles.ar : styles.whatsappForm} onSubmit={handleSubmit} >
         <div className={styles.formHeading}>
@@ -440,7 +440,7 @@ return (
                 </label>
                 <div>
                     <div>
-                        <input onChange={(e) => {e.target.checked ? setSelectedObl(e.target.value) : setSelectedObl(""); setSelectedStateObl(!selectedStateObl); console.log(selectedStateObl); handleChange(e)}} type="checkbox" id="state-obl" name="obligationsState" value="state-obl" />
+                        <input onChange={(e) => {setSelectedStateObl(!selectedStateObl); console.log(selectedStateObl); handleChange(e)}} type="checkbox" id="state-obl" name="obligationsState" value="state-obl" />
                         <label htmlFor="state-obl">
                             {
                                 t("obligations.options.state")
@@ -448,7 +448,7 @@ return (
                         </label> 
                     </div>
                     <div>
-                        <input onChange={(e) => {e.target.checked ? setSelectedObl(e.target.value) : setSelectedObl(""); setSelectedPersonalObl(!selectedPersonalObl); console.log(selectedPersonalObl); handleChange(e)}} type="checkbox" id="personal-obl" name="obligationsPersonal" value="personal-obl" />
+                        <input onChange={(e) => {setSelectedPersonalObl(!selectedPersonalObl); console.log(selectedPersonalObl); handleChange(e)}} type="checkbox" id="personal-obl" name="obligationsPersonal" value="personal-obl" />
                         <label htmlFor="personal-obl">
                             {
                                 t("obligations.options.personal")
