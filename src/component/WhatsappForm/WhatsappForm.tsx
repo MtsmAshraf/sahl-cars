@@ -136,7 +136,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     null;
     
     // Replace with your client's WhatsApp number (include country code, remove +, 0, or spaces)
-    // const phoneNumber = '+966505638988'; 
+    const phoneNumber = '+966505638988'; 
 
     // Open WhatsApp with the pre-filled message
     // console.log(whatsappMessage)
