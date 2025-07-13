@@ -139,8 +139,8 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     const phoneNumber = '+966505638988'; 
 
     // Open WhatsApp with the pre-filled message
-    console.log(whatsappMessage)
-    // window.open(`https://wa.me/${phoneNumber}?text=${whatsappMessage}`, '_blank');
+    // console.log(whatsappMessage)
+    window.open(`https://wa.me/${phoneNumber}?text=${whatsappMessage}`, '_blank');
 };
 
 const [selectedBrand, setSelectedBrand] = useState("")
@@ -149,6 +149,7 @@ const [selectedStateObl, setSelectedStateObl] = useState(false)
 const [selectedPersonalObl, setSelectedPersonalObl] = useState(false)
 const [selectedOtherObl, setSelectedOtherObl] = useState(false)
 
+console.log(selectedObl)
 return (
     <form className={lo !== "en" ? styles.whatsappForm + " " + styles.ar : styles.whatsappForm} onSubmit={handleSubmit} >
         <div className={styles.formHeading}>
