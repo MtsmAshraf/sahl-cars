@@ -8,16 +8,16 @@ import bank4 from "../../../public/images/logos/شعار-البنك-السعود
 import bank5 from "../../../public/images/logos/شعار-البنك-العربي-الوطني-الجديد.svg";
 import bank6 from "../../../public/images/logos/Gulf-International-Bank-2.svg";
 import bank7 from "../../../public/images/logos/NBD-Emirate-01.svg";
-import bank8 from "../../../public/images/logos/imgi_3_400_63a7e6f628e3d.png";
-import bank9 from "../../../public/images/logos/imgi_4_400_63a7e758c710d.jpg";
-import bank10 from "../../../public/images/logos/imgi_6_400_63a7e59628a09.png";
-import bank11 from "../../../public/images/logos/imgi_7_400_63a7e5bd5836e.png";
-import bank12 from "../../../public/images/logos/imgi_8_400_63a7e62d9e4de.png";
-import bank13 from "../../../public/images/logos/imgi_9_400_filter_nobg_63a7e64c29e84.png";
-import bank14 from "../../../public/images/logos/imgi_10_400_63a7e66de4d3d.png";
-import bank15 from "../../../public/images/logos/imgi_53_بنك-التعمير-والإسكان.png";
-import bank16 from "../../../public/images/logos/imgi_3_The-Abdul-Latif-Jameel.png";
-import bank17 from "../../../public/images/logos/imgi_21_شركة-راية-للتمويل.png";
+import bank8 from "../../../public/images/logos/imgi_3_400_63a7e6f628e3d.webp";
+import bank9 from "../../../public/images/logos/imgi_4_400_63a7e758c710d.webp";
+import bank10 from "../../../public/images/logos/imgi_6_400_63a7e59628a09.webp";
+import bank11 from "../../../public/images/logos/imgi_7_400_63a7e5bd5836e.webp";
+import bank12 from "../../../public/images/logos/imgi_8_400_63a7e62d9e4de.webp";
+import bank13 from "../../../public/images/logos/imgi_9_400_filter_nobg_63a7e64c29e84.webp";
+import bank14 from "../../../public/images/logos/imgi_10_400_63a7e66de4d3d.webp";
+import bank15 from "../../../public/images/logos/imgi_53_بنك-التعمير-والإسكان.webp";
+import bank16 from "../../../public/images/logos/imgi_3_The-Abdul-Latif-Jameel.webp";
+import bank17 from "../../../public/images/logos/imgi_21_شركة-راية-للتمويل.webp";
 import bank18 from "../../../public/images/logos/imgi_2_13-12-24-434733670.webp";
 
 export type Bank = {

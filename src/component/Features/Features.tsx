@@ -9,7 +9,7 @@ import { useTranslations } from "next-intl"
 
 import clockSvg from "../../../public/images/clock-time-timer-watch-svgrepo-com.svg"
 import shieldSvg from "../../../public/images/shield-svgrepo-com.svg"
-import zeroSvg from "../../../public/images/0-percent.png"
+import zeroSvg from "../../../public/images/0-percent.webp"
 import moneySvg from "../../../public/images/money-svgrepo-com.svg"
 
 import Image from "next/image"

@@ -1,13 +1,13 @@
 import { StaticImageData } from "next/image";
 
-import car0 from "../../../public/images/imgi_14_800_677fd5ca4e432.png";
-import car1 from "../../../public/images/imgi_38_1170x395-gle-front-blackk-removebg-preview.png";
-import car2 from "../../../public/images/imgi_40_black-1170x395.png";
-import car3 from "../../../public/images/imgi_6_Black.png";
-import car4 from "../../../public/images/imgi_79_thumbnail-up_caf7818161887621de661f25068031f8.png";
+import car0 from "../../../public/images/imgi_14_800_677fd5ca4e432.webp";
+import car1 from "../../../public/images/imgi_38_1170x395-gle-front-blackk-removebg-preview.webp";
+import car2 from "../../../public/images/imgi_40_black-1170x395.webp";
+import car3 from "../../../public/images/imgi_6_Black.webp";
+import car4 from "../../../public/images/imgi_79_thumbnail-up_caf7818161887621de661f25068031f8.webp";
 
-import toyotaLogo from "../../../public/images/imgi_10_5ec3e1ee58550c0004427739.png"
-import hyundaiLogo from "../../../public/images/hyundailogo.png"
+import toyotaLogo from "../../../public/images/imgi_10_5ec3e1ee58550c0004427739.webp"
+import hyundaiLogo from "../../../public/images/hyundailogo.webp"
 import nissanLogo from "../../../public/images/imgi_3_nissan-6-logo-svg-vector.svg"
 
 export type Car = {
