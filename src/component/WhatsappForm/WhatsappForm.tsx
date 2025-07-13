@@ -28,7 +28,9 @@ const [formData, setFormData] = useState({
     insurence: '',
     salarySrc: '',
     salary: '',
-    obligations: '',
+    obligationsState: '',
+    obligationsPersonal: '',
+    obligationsOther: '',
     sema: '',
     totalObl: '',
     message: ''
@@ -58,7 +60,10 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         !formData.insurence ||
         !formData.salarySrc ||
         !formData.salary ||
-        !formData.obligations ||
+        !formData.obligationsState ||
+        !formData.obligationsState ||
+        !formData.obligationsPersonal ||
+        !formData.obligationsOther ||
         !formData.sema ||
         !formData.totalObl
     ){
@@ -85,7 +90,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     `التأمينات الإجتماعبة: ${formData.insurence === "yes-insurence" ? "مسجل" : "غير مسجل"}%0A` +
     `مصدر الراتب: ${formData.salarySrc} bank%0A` +
     `الراتب: ${formData.salary} ريال%0A` +
-    `الالتزامات: ${formData.obligations === "state-obl" ? "تمويل عقاري" : formData.obligations === "personal-obl" ? "تمويل شخصي" : formData.obligations}%0A` +
+    `الالتزامات: ${formData.obligationsState !== "" && selectedStateObl ? "تمويل عقاري" : ""} ${formData.obligationsPersonal !== "" && selectedPersonalObl? "تمويل شخصي" : ""} ${formData.obligationsOther && selectedOtherObl ? formData.obligationsOther : ""}%0A` +
     `التعثر في سمة: ${formData.sema === "yes-sema" ? "يوجد" : "لا يوجد"}%0A` +
     `إجمالي الالتزامات الشهرية: ${formData.totalObl} ريال%0A` +
     `${formData.message !== "" ? `الرسالة: ${formData.message}` : ""}`
@@ -104,7 +109,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     `Social Insurance: ${formData.insurence === "yes-insurence" ? "Registered" : "Not Registered"}%0A` +
     `Salary Source: ${formData.salarySrc} bank%0A` +
     `Salary: ${formData.salary} SAR%0A` +
-    `Obligations: ${formData.obligations === "state-obl" ? "Mortgage" : formData.obligations === "personal-obl" ? "Personal Loan" : formData.obligations}%0A` +
+    `Obligations: ${formData.obligationsState !== "" && selectedStateObl ? "Mortgage" : ""} ${formData.obligationsPersonal !== "" && selectedPersonalObl? "Personal Loan" : ""} ${formData.obligationsOther && selectedOtherObl ? formData.obligationsOther : ""}%0A` +
     `Credit Issues: ${formData.sema === "yes-sema" ? "Yes" : "No"}%0A` +
     `Total Monthly Obligations: ${formData.totalObl} SAR%0A` +
     `${formData.message !== "" ? `Message: ${formData.message}` : ""}`
@@ -123,7 +128,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     `سوشل انشورنس: ${formData.insurence === "yes-insurence" ? "رجسٹرڈ" : "غیر رجسٹرڈ"}%0A` +
     `تنخواہ کا ذریعہ: ${formData.salarySrc} bank%0A` +
     `تنخواہ: ${formData.salary} ریال%0A` +
-    `قرضے: ${formData.obligations === "state-obl" ? "گھر کی فنانسنگ" : formData.obligations === "personal-obl" ? "ذاتی قرضہ" : formData.obligations}%0A` +
+    `قرضے: ${formData.obligationsState !== "" && selectedStateObl ? "گھر کی فنانسنگ" : ""} ${formData.obligationsPersonal !== "" && selectedPersonalObl? "ذاتی قرضہ" : ""} ${formData.obligationsOther && selectedOtherObl ? formData.obligationsOther : ""}%0A` +
     `سمہ میں تعطل: ${formData.sema === "yes-sema" ? "ہاں" : "نہیں"}%0A` +
     `ماہانہ کل قرضے: ${formData.totalObl} ریال%0A` +
     `${formData.message !== "" ? `پیغام: ${formData.message}` : ""}`
@@ -134,11 +139,15 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     const phoneNumber = '+966505638988'; 
 
     // Open WhatsApp with the pre-filled message
-    window.open(`https://wa.me/${phoneNumber}?text=${whatsappMessage}`, '_blank');
+    console.log(whatsappMessage)
+    // window.open(`https://wa.me/${phoneNumber}?text=${whatsappMessage}`, '_blank');
 };
 
 const [selectedBrand, setSelectedBrand] = useState("")
 const [selectedObl, setSelectedObl] = useState("")
+const [selectedStateObl, setSelectedStateObl] = useState(false)
+const [selectedPersonalObl, setSelectedPersonalObl] = useState(false)
+const [selectedOtherObl, setSelectedOtherObl] = useState(false)
 
 return (
     <form className={lo !== "en" ? styles.whatsappForm + " " + styles.ar : styles.whatsappForm} onSubmit={handleSubmit} >
@@ -430,7 +439,7 @@ return (
                 </label>
                 <div>
                     <div>
-                        <input onChange={(e) => {setSelectedObl(e.target.value); handleChange(e)}} type="radio" required id="state-obl" name="obligations" value="state-obl" />
+                        <input onChange={(e) => {e.target.checked ? setSelectedObl(e.target.value) : setSelectedObl(""); setSelectedStateObl(!selectedStateObl); console.log(selectedStateObl); handleChange(e)}} type="checkbox" id="state-obl" name="obligationsState" value="state-obl" />
                         <label htmlFor="state-obl">
                             {
                                 t("obligations.options.state")
@@ -438,7 +447,7 @@ return (
                         </label> 
                     </div>
                     <div>
-                        <input onChange={(e) => {setSelectedObl(e.target.value); handleChange(e)}} type="radio" required id="personal-obl" name="obligations" value="personal-obl" />
+                        <input onChange={(e) => {e.target.checked ? setSelectedObl(e.target.value) : setSelectedObl(""); setSelectedPersonalObl(!selectedPersonalObl); console.log(selectedPersonalObl); handleChange(e)}} type="checkbox" id="personal-obl" name="obligationsPersonal" value="personal-obl" />
                         <label htmlFor="personal-obl">
                             {
                                 t("obligations.options.personal")
@@ -446,7 +455,7 @@ return (
                         </label> 
                     </div>
                     <div>
-                        <input onChange={(e) => {setSelectedObl(e.target.value); handleChange(e)}} type="radio" required id="other-obl" name="obligations" value="other-obl" />
+                        <input onChange={(e) => {setSelectedOtherObl(!selectedOtherObl); handleChange(e)}} type="checkbox" id="other-obl" name="obligations" value="other-obl" />
                         <label htmlFor="other-obl">
                             {
                                 t("obligations.options.other")
@@ -456,7 +465,7 @@ return (
                 </div>
             </div>
             {
-                selectedObl === "other-obl" && 
+                selectedOtherObl && 
                     
                 <div>
                     <label htmlFor="other-obligations">
@@ -467,10 +476,9 @@ return (
                     <input
                         type="text"
                         id="other-obligations"
-                        name="obligations"
+                        name="obligationsOther"
                         placeholder={`${t("otherObligations.placeholder")}`}
                         onChange={handleChange}
-                        required
                     />
                 </div>
             }
