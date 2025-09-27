@@ -65,7 +65,7 @@ const Hero = ({
                             t("Hero.btns.b1")
                         }
                     </a>
-                    <a href="https://wa.me/+966505638988" target='_blank'>
+                    <a href="https://wa.me/+966550798046" target='_blank'>
                         {
                             t("Hero.btns.b2")
                         }

@@ -136,7 +136,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     null;
     
     // Replace with your client's WhatsApp number (include country code, remove +, 0, or spaces)
-    const phoneNumber = '+966505638988'; 
+    const phoneNumber = '+966550798046'; 
 
     // Open WhatsApp with the pre-filled message
     // console.log(whatsappMessage)
@@ -565,7 +565,7 @@ return (
                     t("whatsappLink.p")
                 }
             </p>
-            <a href="https://wa.me/+966505638988" target='_blank'>
+            <a href="https://wa.me/+966550798046" target='_blank'>
                 {
                     t("whatsappLink.a")
                 }

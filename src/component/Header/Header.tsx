@@ -59,16 +59,16 @@ const Header = ({
         </div>
         <div className={styles.links}>
           <div>
-            <a href="https://wa.me/+966505638988" target='_blank'>
+            <a href="https://wa.me/+966550798046" target='_blank'>
               <FontAwesomeIcon icon={faWhatsapp} />
               <span>
                 {t("whatsapp")}
               </span>
             </a>
-            <a href="tel:+966505638988">
+            <a href="tel:+966550798046">
               <FontAwesomeIcon icon={faPhone} />
               <span>
-                +966505638988
+                +966550798046
               </span>
             </a>
           </div>
