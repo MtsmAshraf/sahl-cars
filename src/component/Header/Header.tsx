@@ -1,6 +1,6 @@
 import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
-import React, { useRef } from 'react'
+import React from 'react'
 import logo from "../../../public/images/logo.webp"
 import styles from "./header.module.css"
 import LangSwitch from '../LangSwitch/LangSwitch'
