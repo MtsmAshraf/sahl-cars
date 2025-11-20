@@ -8,6 +8,7 @@ import Steps from "@/component/Steps/Steps";
 import Partners from "@/component/Partners/Partners";
 import Cars from "@/component/Cars/Cars";
 import Loader from "@/component/Loader/Loader";
+import Testimonials from "@/component/Testimonials/Testimonials";
 
 export default async function Home({
   params
@@ -25,6 +26,7 @@ export default async function Home({
       <Cars lo={locale} />
       <Steps lo={locale} />
       <Partners />
+      <Testimonials lo={locale} />
       <Contact lo={locale}/>
     </main>
   );

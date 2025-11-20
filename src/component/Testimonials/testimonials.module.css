@@ -1,0 +1,35 @@
+.testimonials{
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+.testimonials ul{
+    column-count: 3; 
+    column-gap: 20px;  
+}
+.testimonials ul li{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: var(--main-shadow);
+    margin-bottom: 20px;
+    direction: rtl !important;
+    text-align: center;
+}
+.testimonials ul li .stars svg{
+    color: rgb(223, 223, 0);
+}
+.testimonials ul li .stars svg:nth-child(2){
+    font-size: 26px;
+}
+.testimonials ul li p{
+    font-size: 20px;
+}
+.testimonials ul li h4{
+    font-weight: bold;
+}
+@media (max-width: 600px) {
+    .testimonials ul{
+        column-count: 2; 
+        column-gap: 20px;  
+    }
+}
