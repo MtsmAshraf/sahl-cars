@@ -24,7 +24,7 @@ const Loader = () => {
         <div className={classNames.join(" ")}>
             <div className="loader">
                 <div>
-                    <Image src={logo} alt='logo'></Image>
+                    <Image src={logo} alt='Sahl Cars Logo'></Image>
                 </div>
                 <ul>
                     <li></li>
