@@ -9,6 +9,7 @@ import Partners from "@/component/Partners/Partners";
 import Cars from "@/component/Cars/Cars";
 import Loader from "@/component/Loader/Loader";
 import Testimonials from "@/component/Testimonials/Testimonials";
+import Floating from "@/component/Floating/Floating";
 
 export default async function Home({
   params
@@ -28,6 +29,7 @@ export default async function Home({
       <Partners />
       <Testimonials lo={locale} />
       <Contact lo={locale}/>
+      <Floating />
     </main>
   );
 }

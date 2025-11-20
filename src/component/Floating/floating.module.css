@@ -1,0 +1,25 @@
+.floating{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+.floating a{
+    background-image: var(--main-gradient);
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+    font-size: 26px;
+    box-shadow: var(--main-shadow);
+}
+.floating a:first-child{
+    background-image: none;
+    background-color: #fff;
+    color: var(--main-color);
+    border: 1px solid var(--main-color);
+}
