@@ -39,6 +39,9 @@
     border-bottom: 2px solid var(--main-color);
     /* box-shadow: var(--sec-shadow); */
     box-shadow: var(--sec-shadow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 @media (max-width: 600px) {
     .header .logo{
@@ -48,7 +51,7 @@
     }
 }
 .header .logo img{
-    object-fit: contain;
+    object-fit: cover;
 }
 .header .links{
     display: flex;
