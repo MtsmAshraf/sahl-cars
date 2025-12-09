@@ -27,7 +27,7 @@ const Header = ({
         </div>
         <div>
           <Link id="logo" href={"/"} className={styles.logo}>
-            <Image src={logo} alt='Sahl Cars Logo'></Image>
+            <Image src={logo} alt='Sahl Cars Logo img'></Image>
           </Link>
         </div>
         <div className={styles.links}>
