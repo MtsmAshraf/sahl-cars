@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import "./loader.css"
 import Image from 'next/image'
 // import Image from 'next/image'
-import logo from "../../../public/images/logo.webp"
+import logo from "../../../public/images/logo-loader.png"
 const Loader = () => {
     const [loaded, setLoaded] = useState(false)
     const [hide, setHide] = useState(false)
